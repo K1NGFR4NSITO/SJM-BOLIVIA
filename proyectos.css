@@ -1,0 +1,197 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f6f7f9;
+color:#222;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:24px 90px;
+    background:#ffffff;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+}
+
+.logo img{
+height:66px;
+}
+
+.back-btn{
+text-decoration:none;
+background:#e84545;
+color:white;
+padding:12px 28px;
+border-radius:28px;
+font-weight:600;
+}
+
+
+/* HERO */
+
+.proyectos-hero{
+margin-top:110px;
+min-height:300px;
+background:
+linear-gradient(rgba(8,39,55,0.75),rgba(8,39,55,0.75)),
+url('img/proyectos.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+padding:0 90px;
+}
+
+.hero-content{
+display:flex;
+gap:20px;
+align-items:flex-start;
+max-width:900px;
+}
+
+.hero-line{
+width:4px;
+height:120px;
+background:#f1b631;
+}
+
+.hero-content h1{
+color:white;
+font-size:60px;
+margin-bottom:15px;
+}
+
+.hero-content p{
+color:white;
+font-size:22px;
+line-height:1.6;
+}
+
+
+/* GRID */
+
+.proyectos-grid{
+
+width:85%;
+margin:70px auto;
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+
+gap:40px;
+
+}
+
+
+/* TARJETAS */
+
+.project-card{
+
+position:relative;
+
+height:230px;
+
+border-radius:16px;
+
+overflow:hidden;
+
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+
+text-decoration:none;
+
+display:block;
+
+}
+
+.project-card img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+
+position:absolute;
+
+}
+
+.project-overlay{
+
+position:absolute;
+inset:0;
+
+background:linear-gradient(
+90deg,
+rgba(0,0,0,0.75) 0%,
+rgba(0,0,0,0.45) 40%,
+rgba(0,0,0,0.1) 100%
+);
+
+}
+
+.project-content{
+
+position:absolute;
+
+left:35px;
+top:50%;
+
+transform:translateY(-50%);
+
+color:white;
+
+max-width:420px;
+
+}
+
+.project-content h2{
+
+font-size:26px;
+margin-bottom:10px;
+
+}
+
+.project-content p{
+
+font-size:16px;
+line-height:1.6;
+
+}
+
+
+/* HOVER */
+
+.project-card:hover img{
+
+transform:scale(1.05);
+
+transition:0.5s;
+
+}
+
+.project-card:hover{
+
+box-shadow:0 20px 45px rgba(0,0,0,0.25);
+
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width:1000px){
+
+.proyectos-grid{
+grid-template-columns:1fr;
+}
+
+}

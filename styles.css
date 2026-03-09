@@ -1,0 +1,673 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+    background:#fff;
+}
+
+/* NAVBAR */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:24px 90px;
+    background:#ffffff;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:66px;
+    width:auto;
+}
+
+/* BOTON LOGIN */
+
+.login-btn{
+    background:#e84545;
+    color:white;
+    border:none;
+    padding:13px 32px;
+    border-radius:28px;
+    cursor:pointer;
+    font-weight:600;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.login-btn:hover{
+    background:#c93030;
+}
+
+/* CAROUSEL */
+
+.carousel{
+    margin-top:112px;
+    height:82vh;
+    min-height:520px;
+    overflow:hidden;
+    position:relative;
+}
+
+.slides{
+    display:flex;
+    transition:transform 0.8s ease;
+    height:100%;
+}
+
+.slide{
+    min-width:100%;
+    height:100%;
+    position:relative;
+    flex-shrink:0;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* CAPA OSCURA */
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+    z-index:1;
+}
+
+/* TITULO A LA IZQUIERDA */
+
+.slide-title{
+    position:absolute;
+    left:70px;
+    bottom:90px;
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    max-width:540px;
+    z-index:2;
+}
+
+.title-line{
+    width:4px;
+    height:92px;
+    background:#f1b631;
+    border-radius:2px;
+    margin-top:4px;
+}
+
+.slide-title h1{
+    color:#fff;
+    font-size:48px;
+    line-height:1.05;
+    font-weight:700;
+    text-transform:uppercase;
+}
+
+/* DESCRIPCION A LA DERECHA */
+
+.slide-description{
+    position:absolute;
+    right:90px;
+    bottom:105px;
+    max-width:430px;
+    z-index:2;
+    text-align:left;
+}
+
+.slide-description p{
+    color:#ffffff;
+    font-size:22px;
+    line-height:1.45;
+    font-weight:500;
+    text-shadow:0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* REDES SOCIALES */
+
+.social-bar{
+    position:fixed;
+    top:154px;
+    left:0;
+    display:flex;
+    flex-direction:column;
+    z-index:999;
+}
+
+.social-btn{
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:all 0.3s ease;
+}
+
+.social-btn i{
+    color:#ffffff;
+    font-size:26px;
+}
+
+/* COLORES BASE */
+
+.social-btn.facebook{
+    background:#8da6c2;
+}
+
+.social-btn.tiktok{
+    background:#3a3a3a;
+}
+
+.social-btn.youtube{
+    background:#e7b1b1;
+}
+
+.social-btn.instagram{
+    background:#c9a7c7;
+}
+
+/* HOVER REDES */
+
+.social-btn.facebook:hover{
+    background:#1877f2;
+}
+
+.social-btn.tiktok:hover{
+    background:#000000;
+}
+
+.social-btn.youtube:hover{
+    background:#ff0000;
+}
+
+.social-btn.instagram:hover{
+    background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);
+}
+
+.social-btn:hover{
+    transform:translateX(3px);
+}
+
+/* BOTONES PRINCIPALES */
+
+.quick-links{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:60px 30px;
+    background:#ffffff;
+    flex-wrap:wrap;
+}
+
+.quick-btn{
+    width:240px;
+    height:70px;
+    background:#ffffff;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:all 0.3s ease;
+    border:2px solid #f1f1f1;
+}
+
+.quick-btn span{
+    font-size:20px;
+    font-weight:600;
+    color:#1c5c74;
+    text-align:center;
+    line-height:1.2;
+}
+
+.quick-btn:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+    border-color:#1c5c74;
+}
+
+/* SECCION UBICACION */
+
+.location-section{
+    width:100%;
+    padding:80px 10%;
+    background:#f7f7f7;
+}
+
+.location-title{
+    text-align:center;
+    font-size:40px;
+    font-weight:700;
+    margin-bottom:50px;
+    color:#1c5c74;
+}
+
+.location-container{
+    display:flex;
+    gap:50px;
+    align-items:flex-start;
+}
+
+/* MAPA */
+
+.map-box{
+    flex:1;
+    height:420px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.map-box iframe{
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+/* TEXTO */
+
+.location-text{
+    flex:1;
+}
+
+.location-text h3{
+    font-size:26px;
+    margin-bottom:20px;
+    color:#333;
+}
+
+.location-text p{
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:15px;
+    color:#555;
+}
+
+/* FLECHAS DEL CAROUSEL */
+
+.carousel-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:none;
+    border:none;
+    color:rgba(255,255,255,0.85);
+    font-size:60px;
+    font-weight:300;
+    cursor:pointer;
+    padding:0;
+    transition:0.25s ease;
+    z-index:4;
+    line-height:1;
+}
+
+.carousel-arrow:hover{
+    transform:translateY(-50%) scale(1.15);
+    color:#ffffff;
+}
+
+.carousel-arrow.left{
+    left:28px;
+}
+
+.carousel-arrow.right{
+    right:28px;
+}
+
+/* PUNTOS DEL CAROUSEL */
+
+.carousel-dots{
+    position:absolute;
+    bottom:25px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    z-index:3;
+}
+
+.carousel-dots span{
+    width:28px;
+    height:4px;
+    border-radius:4px;
+    background:rgba(255,255,255,0.35);
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+
+.carousel-dots span.active{
+    background:#ffffff;
+    width:40px;
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width: 1024px){
+
+    .navbar{
+        padding:20px 35px;
+    }
+
+    .logo img{
+        height:58px;
+    }
+
+    .carousel{
+        margin-top:100px;
+        height:70vh;
+        min-height:460px;
+    }
+
+    .slide-title{
+        left:40px;
+        bottom:70px;
+        max-width:420px;
+    }
+
+    .title-line{
+        height:78px;
+    }
+
+    .slide-title h1{
+        font-size:38px;
+    }
+
+    .slide-description{
+        right:40px;
+        bottom:78px;
+        max-width:320px;
+    }
+
+    .slide-description p{
+        font-size:18px;
+    }
+
+    .quick-links{
+        display:grid;
+        grid-template-columns:repeat(2, 1fr);
+        gap:22px;
+        padding:45px 30px;
+        max-width:720px;
+        margin:0 auto;
+    }
+
+    .quick-btn{
+        width:100%;
+    }
+
+    .location-container{
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .map-box,
+    .location-text{
+        width:100%;
+    }
+}
+
+/* ========================= */
+/* MOVIL */
+/* ========================= */
+
+@media (max-width: 768px){
+
+    .navbar{
+        padding:16px 18px;
+    }
+
+    .logo img{
+        height:46px;
+    }
+
+    .login-btn{
+        padding:10px 20px;
+        font-size:14px;
+    }
+
+    .carousel{
+        margin-top:82px;
+        height:520px;
+        min-height:520px;
+    }
+
+    .slide-title{
+        left:22px;
+        right:22px;
+        bottom:105px;
+        max-width:none;
+        gap:12px;
+    }
+
+    .title-line{
+        height:68px;
+        margin-top:2px;
+    }
+
+    .slide-title h1{
+        font-size:30px;
+        line-height:1.05;
+    }
+
+    .slide-description{
+        left:22px;
+        right:22px;
+        bottom:48px;
+        max-width:none;
+        text-align:left;
+    }
+
+    .slide-description p{
+        font-size:15px;
+        line-height:1.45;
+    }
+
+    .social-bar{
+        top:130px;
+    }
+
+    .social-btn{
+        width:40px;
+        height:40px;
+    }
+
+    .social-btn i{
+        font-size:22px;
+    }
+
+    .carousel-arrow{
+        font-size:44px;
+    }
+
+    .carousel-arrow.left{
+        left:10px;
+    }
+
+    .carousel-arrow.right{
+        right:10px;
+    }
+
+    .carousel-dots{
+        bottom:16px;
+        gap:8px;
+    }
+
+    .carousel-dots span{
+        width:22px;
+        height:4px;
+    }
+
+    .carousel-dots span.active{
+        width:32px;
+    }
+
+    .quick-links{
+        display:grid;
+        grid-template-columns:repeat(2, 1fr);
+        gap:14px;
+        padding:30px 16px 40px;
+        max-width:100%;
+    }
+
+    .quick-btn{
+        width:100%;
+        height:78px;
+        border-radius:10px;
+    }
+
+    .quick-btn span{
+        font-size:16px;
+        padding:0 6px;
+    }
+
+    .location-section{
+        padding:50px 16px;
+    }
+
+    .location-title{
+        font-size:28px;
+        margin-bottom:28px;
+    }
+
+    .location-container{
+        flex-direction:column;
+        gap:22px;
+    }
+
+    .map-box{
+        height:300px;
+    }
+
+    .location-text h3{
+        font-size:22px;
+    }
+
+    .location-text p{
+        font-size:16px;
+        line-height:1.55;
+    }
+}
+
+/* ========================= */
+/* MOVIL PEQUEÑO */
+/* ========================= */
+
+@media (max-width: 480px){
+
+    .navbar{
+        padding:14px 14px;
+    }
+
+    .logo img{
+        height:40px;
+    }
+
+    .login-btn{
+        padding:9px 16px;
+        font-size:13px;
+    }
+
+    .carousel{
+        margin-top:74px;
+        height:470px;
+        min-height:470px;
+    }
+
+    .slide-title{
+        left:18px;
+        right:18px;
+        bottom:98px;
+    }
+
+    .title-line{
+        height:58px;
+    }
+
+    .slide-title h1{
+        font-size:24px;
+    }
+
+    .slide-description{
+        left:18px;
+        right:18px;
+        bottom:42px;
+    }
+
+    .slide-description p{
+        font-size:14px;
+    }
+
+    .social-bar{
+        top:118px;
+    }
+
+    .social-btn{
+        width:36px;
+        height:36px;
+    }
+
+    .social-btn i{
+        font-size:20px;
+    }
+
+    .carousel-arrow{
+        font-size:36px;
+    }
+
+    .quick-links{
+        grid-template-columns:repeat(2, 1fr);
+        gap:12px;
+        padding:24px 12px 34px;
+    }
+
+    .quick-btn{
+        height:72px;
+    }
+
+    .quick-btn span{
+        font-size:15px;
+    }
+
+    .location-title{
+        font-size:24px;
+    }
+
+    .map-box{
+        height:260px;
+    }
+
+    .location-text h3{
+        font-size:20px;
+    }
+
+    .location-text p{
+        font-size:15px;
+    }
+}
