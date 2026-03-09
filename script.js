@@ -1,5 +1,6 @@
 let index = 0;
 
+const carousel = document.querySelector(".carousel");
 const slides = document.querySelector(".slides");
 const slideItems = document.querySelectorAll(".slide");
 const totalSlides = slideItems.length;
@@ -30,7 +31,8 @@ slideItems.forEach((_, i) => {
 const dots = document.querySelectorAll(".carousel-dots span");
 
 function updateCarousel() {
-    slides.style.transform = `translateX(-${index * 100}%)`;
+    const slideWidth = carousel.clientWidth;
+    slides.style.transform = `translateX(-${index * slideWidth}px)`;
 
     dots.forEach(dot => dot.classList.remove("active"));
     dots[index].classList.add("active");
@@ -68,5 +70,9 @@ function restartAutoplay() {
     clearInterval(autoPlay);
     startAutoplay();
 }
+
+window.addEventListener("load", updateCarousel);
+window.addEventListener("resize", updateCarousel);
+window.addEventListener("orientationchange", updateCarousel);
 
 startAutoplay();
