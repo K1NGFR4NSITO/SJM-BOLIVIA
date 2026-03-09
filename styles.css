@@ -5,11 +5,20 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
+:root{
+    --nav-height:112px;
+}
+
+html, body{
+    width:100%;
+    overflow-x:hidden;
+    background:#fff;
+}
+
 body{
     margin:0;
     padding:0;
-    overflow-x:hidden;
-    background:#fff;
+    padding-top:var(--nav-height);
 }
 
 /* NAVBAR */
@@ -18,7 +27,8 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:24px 90px;
+    height:var(--nav-height);
+    padding:0 90px;
     background:#ffffff;
     box-shadow:0 2px 10px rgba(0,0,0,0.08);
     position:fixed;
@@ -36,6 +46,7 @@ body{
 .logo img{
     height:66px;
     width:auto;
+    display:block;
 }
 
 /* BOTON LOGIN */
@@ -59,30 +70,35 @@ body{
 /* CAROUSEL */
 
 .carousel{
-    margin-top:112px;
-    height:82vh;
+    margin-top:0;
+    height:calc(100dvh - var(--nav-height));
     min-height:520px;
     overflow:hidden;
     position:relative;
+    width:100%;
 }
 
 .slides{
     display:flex;
     transition:transform 0.8s ease;
     height:100%;
+    width:100%;
 }
 
 .slide{
+    width:100%;
     min-width:100%;
+    flex:0 0 100%;
     height:100%;
     position:relative;
-    flex-shrink:0;
+    overflow:hidden;
 }
 
 .slide img{
     width:100%;
     height:100%;
     object-fit:cover;
+    object-position:center;
     display:block;
 }
 
@@ -116,6 +132,7 @@ body{
     background:#f1b631;
     border-radius:2px;
     margin-top:4px;
+    flex-shrink:0;
 }
 
 .slide-title h1{
@@ -324,6 +341,7 @@ body{
     transition:0.25s ease;
     z-index:4;
     line-height:1;
+    -webkit-tap-highlight-color:transparent;
 }
 
 .carousel-arrow:hover{
@@ -344,7 +362,9 @@ body{
 .carousel-dots{
     position:absolute;
     bottom:25px;
-    width:100%;
+    left:50%;
+    transform:translateX(-50%);
+    width:auto;
     display:flex;
     justify-content:center;
     gap:10px;
@@ -371,23 +391,31 @@ body{
 
 @media (max-width: 1024px){
 
+    :root{
+        --nav-height:92px;
+    }
+
     .navbar{
-        padding:20px 35px;
+        padding:0 30px;
     }
 
     .logo img{
-        height:58px;
+        height:54px;
+    }
+
+    .login-btn{
+        padding:11px 24px;
+        font-size:14px;
     }
 
     .carousel{
-        margin-top:100px;
-        height:70vh;
+        height:calc(100dvh - var(--nav-height));
         min-height:460px;
     }
 
     .slide-title{
-        left:40px;
-        bottom:70px;
+        left:36px;
+        bottom:86px;
         max-width:420px;
     }
 
@@ -400,8 +428,8 @@ body{
     }
 
     .slide-description{
-        right:40px;
-        bottom:78px;
+        right:36px;
+        bottom:92px;
         max-width:320px;
     }
 
@@ -439,47 +467,52 @@ body{
 
 @media (max-width: 768px){
 
+    :root{
+        --nav-height:66px;
+    }
+
     .navbar{
-        padding:16px 18px;
+        padding:0 14px;
+        box-shadow:none;
     }
 
     .logo img{
-        height:46px;
+        height:36px;
     }
 
     .login-btn{
-        padding:10px 20px;
-        font-size:14px;
+        padding:8px 16px;
+        font-size:13px;
+        border-radius:22px;
     }
 
     .carousel{
-        margin-top:82px;
-        height:520px;
-        min-height:520px;
+        height:420px;
+        min-height:420px;
     }
 
     .slide-title{
-        left:22px;
-        right:22px;
-        bottom:105px;
+        left:20px;
+        right:20px;
+        bottom:112px;
         max-width:none;
-        gap:12px;
+        gap:10px;
     }
 
     .title-line{
-        height:68px;
+        height:64px;
         margin-top:2px;
     }
 
     .slide-title h1{
-        font-size:30px;
+        font-size:28px;
         line-height:1.05;
     }
 
     .slide-description{
-        left:22px;
-        right:22px;
-        bottom:48px;
+        left:20px;
+        right:20px;
+        bottom:52px;
         max-width:none;
         text-align:left;
     }
@@ -490,28 +523,28 @@ body{
     }
 
     .social-bar{
-        top:130px;
+        top:76px;
     }
 
     .social-btn{
-        width:40px;
-        height:40px;
+        width:38px;
+        height:38px;
     }
 
     .social-btn i{
-        font-size:22px;
+        font-size:20px;
     }
 
     .carousel-arrow{
-        font-size:44px;
+        font-size:42px;
     }
 
     .carousel-arrow.left{
-        left:10px;
+        left:8px;
     }
 
     .carousel-arrow.right{
-        right:10px;
+        right:8px;
     }
 
     .carousel-dots{
@@ -532,7 +565,7 @@ body{
         display:grid;
         grid-template-columns:repeat(2, 1fr);
         gap:14px;
-        padding:30px 16px 40px;
+        padding:30px 14px 40px;
         max-width:100%;
     }
 
@@ -581,43 +614,48 @@ body{
 
 @media (max-width: 480px){
 
+    :root{
+        --nav-height:58px;
+    }
+
     .navbar{
-        padding:14px 14px;
+        padding:0 12px;
+        box-shadow:none;
     }
 
     .logo img{
-        height:40px;
+        height:32px;
     }
 
     .login-btn{
-        padding:9px 16px;
-        font-size:13px;
+        padding:7px 14px;
+        font-size:12px;
+        border-radius:20px;
     }
 
     .carousel{
-        margin-top:74px;
-        height:470px;
-        min-height:470px;
+        height:390px;
+        min-height:390px;
     }
 
     .slide-title{
-        left:18px;
-        right:18px;
-        bottom:98px;
+        left:16px;
+        right:16px;
+        bottom:100px;
     }
 
     .title-line{
-        height:58px;
+        height:54px;
     }
 
     .slide-title h1{
-        font-size:24px;
+        font-size:23px;
     }
 
     .slide-description{
-        left:18px;
-        right:18px;
-        bottom:42px;
+        left:16px;
+        right:16px;
+        bottom:44px;
     }
 
     .slide-description p{
@@ -625,20 +663,20 @@ body{
     }
 
     .social-bar{
-        top:118px;
+        top:102px;
     }
 
     .social-btn{
-        width:36px;
-        height:36px;
+        width:34px;
+        height:34px;
     }
 
     .social-btn i{
-        font-size:20px;
+        font-size:18px;
     }
 
     .carousel-arrow{
-        font-size:36px;
+        font-size:34px;
     }
 
     .quick-links{
