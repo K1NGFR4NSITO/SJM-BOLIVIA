@@ -1,15 +1,24 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --nav-height:112px;
+}
+
+html, body{
+    width:100%;
+    overflow-x:hidden;
 }
 
 body{
-background:#f6f7f9;
-color:#222;
+    background:#f6f7f9;
+    color:#222;
+    padding-top:var(--nav-height);
 }
-
 
 /* NAVBAR */
 
@@ -17,7 +26,8 @@ color:#222;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:24px 90px;
+    height:var(--nav-height);
+    padding:0 90px;
     background:#ffffff;
     box-shadow:0 2px 10px rgba(0,0,0,0.08);
     position:fixed;
@@ -28,170 +38,362 @@ color:#222;
 }
 
 .logo img{
-height:66px;
+    height:66px;
+    width:auto;
+    display:block;
 }
 
 .back-btn{
-text-decoration:none;
-background:#e84545;
-color:white;
-padding:12px 28px;
-border-radius:28px;
-font-weight:600;
+    text-decoration:none;
+    background:#e84545;
+    color:white;
+    padding:12px 28px;
+    border-radius:28px;
+    font-weight:600;
+    font-size:15px;
+    transition:0.3s;
 }
 
+.back-btn:hover{
+    background:#c93030;
+}
 
 /* HERO */
 
 .proyectos-hero{
-margin-top:110px;
-min-height:300px;
-background:
-linear-gradient(rgba(8,39,55,0.75),rgba(8,39,55,0.75)),
-url('img/proyectos.jpg') center/cover no-repeat;
-display:flex;
-align-items:center;
-padding:0 90px;
+    min-height:300px;
+    background:
+    linear-gradient(rgba(8,39,55,0.75),rgba(8,39,55,0.75)),
+    url('img/proyectos.jpg') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    padding:0 90px;
 }
 
 .hero-content{
-display:flex;
-gap:20px;
-align-items:flex-start;
-max-width:900px;
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    max-width:900px;
 }
 
 .hero-line{
-width:4px;
-height:120px;
-background:#f1b631;
+    width:4px;
+    height:120px;
+    background:#f1b631;
+    border-radius:3px;
+    flex-shrink:0;
 }
 
 .hero-content h1{
-color:white;
-font-size:60px;
-margin-bottom:15px;
+    color:white;
+    font-size:60px;
+    line-height:1;
+    margin-bottom:15px;
+    text-transform:uppercase;
 }
 
 .hero-content p{
-color:white;
-font-size:22px;
-line-height:1.6;
+    color:white;
+    font-size:22px;
+    line-height:1.6;
+    text-align:justify;
+    text-justify:inter-word;
 }
-
 
 /* GRID */
 
 .proyectos-grid{
-
-width:85%;
-margin:70px auto;
-
-display:grid;
-grid-template-columns:repeat(2,1fr);
-
-gap:40px;
-
+    width:85%;
+    margin:70px auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:40px;
 }
-
 
 /* TARJETAS */
 
 .project-card{
-
-position:relative;
-
-height:230px;
-
-border-radius:16px;
-
-overflow:hidden;
-
-box-shadow:0 15px 35px rgba(0,0,0,0.15);
-
-text-decoration:none;
-
-display:block;
-
+    position:relative;
+    height:230px;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+    text-decoration:none;
+    display:block;
 }
 
 .project-card img{
-
-width:100%;
-height:100%;
-object-fit:cover;
-
-position:absolute;
-
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    position:absolute;
+    inset:0;
+    transition:transform 0.5s ease;
 }
 
 .project-overlay{
-
-position:absolute;
-inset:0;
-
-background:linear-gradient(
-90deg,
-rgba(0,0,0,0.75) 0%,
-rgba(0,0,0,0.45) 40%,
-rgba(0,0,0,0.1) 100%
-);
-
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(0,0,0,0.75) 0%,
+        rgba(0,0,0,0.45) 40%,
+        rgba(0,0,0,0.1) 100%
+    );
 }
 
 .project-content{
-
-position:absolute;
-
-left:35px;
-top:50%;
-
-transform:translateY(-50%);
-
-color:white;
-
-max-width:420px;
-
+    position:absolute;
+    left:35px;
+    top:50%;
+    transform:translateY(-50%);
+    color:white;
+    max-width:420px;
 }
 
 .project-content h2{
-
-font-size:26px;
-margin-bottom:10px;
-
+    font-size:26px;
+    margin-bottom:10px;
+    line-height:1.15;
 }
 
 .project-content p{
-
-font-size:16px;
-line-height:1.6;
-
+    font-size:16px;
+    line-height:1.6;
+    text-align:justify;
+    text-justify:inter-word;
 }
-
 
 /* HOVER */
 
 .project-card:hover img{
-
-transform:scale(1.05);
-
-transition:0.5s;
-
+    transform:scale(1.05);
 }
 
 .project-card:hover{
-
-box-shadow:0 20px 45px rgba(0,0,0,0.25);
-
+    box-shadow:0 20px 45px rgba(0,0,0,0.25);
 }
 
+/* ========================= */
+/* TABLET */
+/* ========================= */
 
-/* RESPONSIVE */
+@media (max-width: 1024px){
 
-@media (max-width:1000px){
+    :root{
+        --nav-height:92px;
+    }
 
-.proyectos-grid{
-grid-template-columns:1fr;
+    .navbar{
+        padding:0 30px;
+    }
+
+    .logo img{
+        height:54px;
+    }
+
+    .back-btn{
+        padding:11px 22px;
+        font-size:14px;
+    }
+
+    .proyectos-hero{
+        min-height:280px;
+        padding:0 30px;
+    }
+
+    .hero-line{
+        height:95px;
+    }
+
+    .hero-content h1{
+        font-size:46px;
+        margin-bottom:12px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+        line-height:1.55;
+    }
+
+    .proyectos-grid{
+        width:90%;
+        margin:50px auto 60px;
+        grid-template-columns:1fr;
+        gap:24px;
+    }
+
+    .project-card{
+        height:220px;
+    }
+
+    .project-content{
+        max-width:380px;
+    }
+
+    .project-content h2{
+        font-size:24px;
+    }
+
+    .project-content p{
+        font-size:15px;
+    }
 }
 
+/* ========================= */
+/* MOVIL */
+/* ========================= */
+
+@media (max-width: 768px){
+
+    :root{
+        --nav-height:66px;
+    }
+
+    .navbar{
+        padding:0 14px;
+        box-shadow:none;
+    }
+
+    .logo img{
+        height:36px;
+    }
+
+    .back-btn{
+        padding:8px 16px;
+        font-size:13px;
+        border-radius:22px;
+    }
+
+    .proyectos-hero{
+        min-height:250px;
+        padding:0 20px;
+    }
+
+    .hero-content{
+        gap:12px;
+        max-width:100%;
+    }
+
+    .hero-line{
+        height:78px;
+    }
+
+    .hero-content h1{
+        font-size:34px;
+        line-height:1.03;
+        margin-bottom:10px;
+    }
+
+    .hero-content p{
+        font-size:15px;
+        line-height:1.5;
+    }
+
+    .proyectos-grid{
+        width:100%;
+        padding:0 14px;
+        margin:30px 0 45px;
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .project-card{
+        height:210px;
+        border-radius:14px;
+    }
+
+    .project-content{
+        left:20px;
+        right:20px;
+        max-width:none;
+    }
+
+    .project-content h2{
+        font-size:22px;
+        line-height:1.15;
+        margin-bottom:8px;
+    }
+
+    .project-content p{
+        font-size:14px;
+        line-height:1.5;
+    }
+}
+
+/* ========================= */
+/* MOVIL PEQUEÑO */
+/* ========================= */
+
+@media (max-width: 480px){
+
+    :root{
+        --nav-height:58px;
+    }
+
+    .navbar{
+        padding:0 12px;
+        box-shadow:none;
+    }
+
+    .logo img{
+        height:32px;
+    }
+
+    .back-btn{
+        padding:7px 14px;
+        font-size:12px;
+        border-radius:20px;
+    }
+
+    .proyectos-hero{
+        min-height:220px;
+        padding:0 16px;
+    }
+
+    .hero-content{
+        gap:10px;
+    }
+
+    .hero-line{
+        height:64px;
+    }
+
+    .hero-content h1{
+        font-size:28px;
+        margin-bottom:10px;
+    }
+
+    .hero-content p{
+        font-size:14px;
+        line-height:1.45;
+    }
+
+    .proyectos-grid{
+        padding:0 12px;
+        gap:14px;
+        margin:24px 0 36px;
+    }
+
+    .project-card{
+        height:190px;
+        border-radius:12px;
+    }
+
+    .project-content{
+        left:16px;
+        right:16px;
+    }
+
+    .project-content h2{
+        font-size:19px;
+        margin-bottom:6px;
+    }
+
+    .project-content p{
+        font-size:13px;
+        line-height:1.4;
+    }
 }
