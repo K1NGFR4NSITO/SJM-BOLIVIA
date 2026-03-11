@@ -10,20 +10,50 @@
 <body>
 
     <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="logo">
-            <img src="sjm.png" alt="SJM Bolivia">
-        </div>
+<header class="navbar">
+    <div class="logo">
+        <img src="sjm.png" alt="SJM Bolivia">
+    </div>
 
+    <nav class="nav-menu">
+        <a href="quienes-somos.html">Quiénes Somos</a>
+        <a href="publicaciones.html">Publicaciones</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="#">Transparencia</a>
+    </nav>
+
+    <div class="nav-actions">
         <button class="login-btn">Login</button>
-    </header>
+
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<!-- MENU MOVIL -->
+<div class="mobile-menu-overlay"></div>
+
+<aside class="mobile-menu">
+    <button class="mobile-menu-close" aria-label="Cerrar menú">&times;</button>
+
+    <nav class="mobile-nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="quienes-somos.html">Quiénes Somos</a>
+        <a href="publicaciones.html">Publicaciones</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="#">Transparencia</a>
+    </nav>
+</aside>
 
     <!-- REDES SOCIALES -->
     <div class="social-bar">
-        <a href="#" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.facebook.com/sjmbolivia/?locale=es_LA" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="#" class="social-btn tiktok"><i class="fa-brands fa-tiktok"></i></a>
         <a href="#" class="social-btn youtube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.instagram.com/sjm_bolivia?fbclid=IwY2xjawQbAcNleHRuA2FlbQIxMABicmlkETIzV3NBRFhaU3JRR2lTV0FEc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHknOJWhN5SjtECE_AGMZW6dhKENJQ4DsulagceEqR9VEMB4Tl49TRIYFd6pf_aem_hZ1qLGgGM3sFH1pRHCz_xg" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
     </div>
 
     <!-- CAROUSEL -->
@@ -82,57 +112,80 @@
 
     </section>
 
-    <!-- BOTONES PRINCIPALES -->
-    <section class="quick-links">
-        <a href="quienes-somos.html" class="quick-btn"><span>Quiénes Somos</span></a>        
-        <a href="publicaciones.html" class="quick-btn"><span>Publicaciones</span></a>
-        <a href="proyectos.html" class="quick-btn"><span>Proyectos</span></a>
-        <a href="#" class="quick-btn"><span>Transparencia</span></a>
-    </section>
-
     <!-- UBICACION -->
-    <section class="location-section">
+<section class="contact-showcase">
 
-        <h2 class="location-title">Dónde encontrarnos</h2>
+    <div class="contact-top">
 
-        <div class="location-container">
+        <div class="contact-map">
+            <iframe
+                src="https://maps.google.com/maps?q=SJM%20Servicio%20Jesuita%20a%20Migrantes%20Bolivia&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
 
-            <div class="map-box">
-                <iframe
-                    src="https://maps.google.com/maps?q=SJM%20Servicio%20Jesuita%20a%20Migrantes%20Bolivia&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                    frameborder="0"
-                    allowfullscreen>
-                </iframe>
+        <div class="contact-card contact-orange">
+            <div class="contact-icon">
+                <i class="fa-regular fa-address-book"></i>
+            </div>
+            <h3>Información de contacto:</h3>
+            <p>
+                Calle Ficticia 123<br>
+                El Alto - La Paz - Bolivia
+            </p>
+        </div>
+
+        <div class="contact-card contact-green">
+            <div class="contact-icon">
+                <i class="fa-regular fa-envelope"></i>
+            </div>
+            <h3>Correo electrónico:</h3>
+            <p>contacto@sjmbolivia.org</p>
+        </div>
+
+    </div>
+
+    <div class="contact-bottom">
+
+        <div class="contact-bottom-overlay"></div>
+
+        <div class="contact-bottom-content">
+
+            <div class="contact-info-text">
+                <h2>Donaciones</h2>
+                <p>
+                    Aquí puedes colocar una breve descripción institucional del lugar, 
+                    la ubicación de la oficina, referencias principales y cualquier 
+                    información útil para personas que deseen aproximarse al SJM Bolivia.
+                </p>
+                <p>
+                    Nuestro equipo atiende de lunes a viernes en horarios de oficina y 
+                    brinda orientación, acompañamiento y apoyo en distintos servicios.
+                </p>
             </div>
 
-            <div class="location-text">
-                <h3>Sede Servicio Jesuita a Migrantes</h3>
+            <form class="contact-form">
+                <input type="text" placeholder="Escriba su nombre y apellidos">
+                <input type="email" placeholder="Escriba su correo electrónico">
+                <input type="text" placeholder="Escriba el nombre de su ciudad">
 
-                <p>
-                    Aquí puedes colocar una descripción institucional del lugar.
-                </p>
+                <label class="contact-check">
+                    <input type="checkbox">
+                    <span>
+                        Declaro que he leído la Política de Privacidad y doy mi consentimiento
+                        para el uso de los datos que proporciono.
+                    </span>
+                </label>
 
-                <p>
-                    Nuestro equipo atiende de lunes a viernes en horarios de oficina.
-                    Puedes aproximarte a nuestras instalaciones para recibir orientación,
-                    acompañamiento y apoyo en diferentes servicios ofrecidos por el SJM.
-                </p>
-
-                <p>
-                    Horario de atención:
-                    <br>
-                    <strong>08:00 – 17:00</strong>
-                </p>
-
-                <p>
-                    Aquí puedes añadir más información sobre cómo llegar, referencias
-                    cercanas o cualquier indicación útil para visitantes.
-                </p>
-            </div>
+                <button type="submit">ENVIAR</button>
+            </form>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
     <script src="script.js"></script>
 </body>
