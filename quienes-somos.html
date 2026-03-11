@@ -10,15 +10,45 @@
 <body>
 
     <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="sjm.png" alt="SJM Bolivia">
-            </a>
-        </div>
+<header class="navbar">
+    <div class="logo">
+        <a href="index.html">
+            <img src="sjm.png" alt="SJM Bolivia">
+        </a>
+    </div>
 
+    <nav class="nav-menu">
+        <a href="index.html">Inicio</a>
+        <a href="quienes-somos.html" class="active">Quiénes Somos</a>
+        <a href="publicaciones.html">Publicaciones</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="#">Transparencia</a>
+    </nav>
+
+    <div class="nav-actions">
         <a href="index.html" class="back-btn">Volver al inicio</a>
-    </header>
+
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<div class="mobile-menu-overlay"></div>
+
+<aside class="mobile-menu">
+    <button class="mobile-menu-close" aria-label="Cerrar menú">&times;</button>
+
+    <nav class="mobile-nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="quienes-somos.html">Quiénes Somos</a>
+        <a href="publicaciones.html">Publicaciones</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="#">Transparencia</a>
+    </nav>
+</aside>
 
     <!-- SECCION 1: TEXTO A LA DERECHA -->
     <section class="about-hero right-text">
