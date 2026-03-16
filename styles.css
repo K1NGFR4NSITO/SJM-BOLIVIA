@@ -924,6 +924,182 @@ body{
     background:#0b7d44;
 }
 
+/* SECCION INFORMACION */
+
+.info-section{
+    width:100%;
+    padding:80px 60px;
+    background:#f6f7f9;
+}
+
+.info-top-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:26px;
+    margin-bottom:32px;
+}
+
+.info-top-card{
+    position:relative;
+    display:block;
+    min-height:320px;
+    border-radius:28px;
+    overflow:hidden;
+    text-decoration:none;
+}
+
+.info-top-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.info-top-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.28);
+}
+
+.info-top-card h3{
+    position:absolute;
+    top:28px;
+    left:28px;
+    right:28px;
+    color:#fff;
+    font-size:28px;
+    line-height:1.22;
+    font-weight:700;
+    text-transform:uppercase;
+    z-index:2;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:26px;
+}
+
+/* TARJETAS */
+
+.info-card{
+    border-radius:28px;
+    padding:28px;
+    color:#fff;
+    min-height:640px;
+}
+
+.card-yellow{
+    background:#f6a400;
+}
+
+.card-blue{
+    background:#1097ad;
+    text-align:center;
+}
+
+.card-red{
+    background:#ff3d12;
+}
+
+/* TITULOS */
+
+.info-card h3{
+    margin-bottom:20px;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+}
+
+.info-card h2{
+    font-size:58px;
+    line-height:1;
+    margin:70px 0 18px;
+    font-weight:700;
+}
+
+/* HISTORIAS */
+
+.info-img{
+    position:relative;
+    margin-bottom:16px;
+    overflow:hidden;
+}
+
+.info-img img{
+    width:100%;
+    height:225px;
+    object-fit:cover;
+    display:block;
+}
+
+.info-img span{
+    position:absolute;
+    left:18px;
+    bottom:18px;
+    color:#fff;
+    font-size:24px;
+    font-weight:700;
+    text-transform:uppercase;
+    z-index:2;
+}
+
+.info-img::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0.05));
+}
+
+/* GRAFICO */
+
+.grafico{
+    width:100%;
+    max-width:360px;
+    display:block;
+    margin:34px auto 0;
+}
+
+/* BARRAS */
+
+.barra{
+    margin-top:18px;
+}
+
+.barra-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    margin-bottom:8px;
+}
+
+.barra-top span{
+    font-size:15px;
+    line-height:1.3;
+}
+
+.barra-top strong{
+    font-size:18px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+.progress{
+    width:100%;
+    height:14px;
+    background:rgba(255,255,255,0.55);
+    border-radius:999px;
+    overflow:hidden;
+}
+
+.progress div{
+    height:100%;
+    background:#4f87b8;
+    border-radius:999px;
+}
+
 /* ========================= */
 /* RESPONSIVE CONTACTO */
 /* ========================= */
@@ -955,6 +1131,23 @@ body{
     .contact-info-text p{
         font-size:19px;
         max-width:100%;
+    }
+
+    .info-top-grid{
+        grid-template-columns:1fr;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .info-card{
+        min-height:auto;
+    }
+
+    .info-card h2{
+        margin-top:36px;
+        font-size:46px;
     }
 }
 
@@ -1020,6 +1213,57 @@ body{
         height:50px;
         font-size:15px;
     }
+
+    .info-section{
+        padding:60px 20px;
+    }
+
+    .info-top-card{
+        min-height:240px;
+        border-radius:22px;
+    }
+
+    .info-top-card h3{
+        top:20px;
+        left:20px;
+        right:20px;
+        font-size:22px;
+    }
+
+    .info-grid{
+        gap:22px;
+    }
+
+    .info-card{
+        border-radius:22px;
+        padding:22px;
+    }
+
+    .info-card h2{
+        font-size:38px;
+    }
+
+    .info-img img{
+        height:190px;
+    }
+
+    .info-img span{
+        font-size:18px;
+        left:14px;
+        bottom:14px;
+    }
+
+    .barra-top span{
+        font-size:14px;
+    }
+
+    .barra-top strong{
+        font-size:16px;
+    }
+
+    .progress{
+        height:12px;
+    }
 }
 
 @media (max-width: 480px){
@@ -1066,5 +1310,162 @@ body{
     .contact-form button{
         height:48px;
         font-size:14px;
+    }
+
+    .info-section{
+        padding:50px 14px;
+    }
+
+    .info-top-card{
+        min-height:200px;
+        border-radius:18px;
+    }
+
+    .info-top-card h3{
+        font-size:18px;
+        top:16px;
+        left:16px;
+        right:16px;
+    }
+
+    .info-card{
+        border-radius:18px;
+        padding:18px;
+    }
+
+    .info-card h3{
+        font-size:16px;
+    }
+
+    .info-card h2{
+        font-size:32px;
+    }
+
+    .info-img img{
+        height:165px;
+    }
+
+    .grafico{
+        max-width:100%;
+    }
+}
+
+/* PILLS DERECHA */
+
+.nav-pills{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-shrink:0;
+    position:relative;
+}
+
+.pill-btn{
+    border:none;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 24px;
+    border-radius:999px;
+    font-size:15px;
+    font-weight:700;
+    line-height:1;
+    cursor:pointer;
+    transition:0.25s ease;
+    white-space:nowrap;
+}
+
+.pill-blue{
+    background:#0b5d8b;
+    color:#fff;
+}
+
+.pill-blue:hover{
+    background:#094b6f;
+}
+
+.pill-orange{
+    background:#f24b2a;
+    color:#fff;
+}
+
+.pill-orange:hover{
+    background:#d93d1e;
+}
+
+/* DROPDOWN */
+
+.pill-dropdown{
+    position:relative;
+}
+
+.dropdown-toggle{
+    appearance:none;
+    -webkit-appearance:none;
+}
+
+.pill-dropdown-menu{
+    position:absolute;
+    top:calc(100% + 10px);
+    left:0;
+    min-width:260px;
+    background:#0b5d8b;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 18px 35px rgba(0,0,0,0.18);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(8px);
+    transition:0.25s ease;
+    z-index:1200;
+}
+
+.pill-dropdown.active .pill-dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.pill-dropdown-menu a{
+    display:block;
+    padding:16px 20px;
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
+    border-bottom:1px solid rgba(255,255,255,0.12);
+    transition:0.25s ease;
+}
+
+.pill-dropdown-menu a:last-child{
+    border-bottom:none;
+}
+
+.pill-dropdown-menu a:hover{
+    background:rgba(255,255,255,0.12);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px){
+    .nav-pills{
+        gap:10px;
+    }
+
+    .pill-btn{
+        padding:12px 18px;
+        font-size:14px;
+    }
+
+    .pill-dropdown-menu{
+        min-width:220px;
+    }
+}
+
+@media (max-width: 768px){
+    .nav-pills{
+        display:none;
     }
 }

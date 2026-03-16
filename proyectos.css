@@ -38,13 +38,19 @@ body{
     gap:30px;
 }
 
+.logo{
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+}
+
 .logo img{
     height:66px;
     width:auto;
     display:block;
 }
 
-/* MENU NAVBAR */
+/* MENU CENTRO */
 
 .nav-menu{
     display:flex;
@@ -72,41 +78,128 @@ body{
     color:#e67e22;
 }
 
-/* ACCIONES DERECHA */
+/* PILLS DERECHA */
 
-.nav-actions{
+.nav-pills{
     display:flex;
     align-items:center;
     gap:14px;
     flex-shrink:0;
 }
 
-.back-btn{
+.pill-dropdown{
+    position:relative;
+}
+
+.pill-btn{
+    border:none;
     text-decoration:none;
-    background:#e84545;
-    color:white;
-    padding:12px 28px;
-    border-radius:28px;
-    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:13px 28px;
+    border-radius:30px;
     font-size:15px;
-    transition:0.3s;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.25s ease;
     white-space:nowrap;
 }
 
-.back-btn:hover{
+.pill-blue{
+    background:#0d5d8c;
+    color:#fff;
+}
+
+.pill-blue:hover{
+    background:#094c72;
+}
+
+.pill-orange{
+    background:#f4511e;
+    color:#fff;
+}
+
+.pill-orange:hover{
+    background:#d84315;
+}
+
+.pill-dropdown-menu{
+    position:absolute;
+    top:calc(100% + 10px);
+    left:0;
+    min-width:230px;
+    background:#0d5d8c;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.18);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(8px);
+    transition:0.25s ease;
+    z-index:1200;
+}
+
+.pill-dropdown.active .pill-dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.pill-dropdown-menu a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:14px 18px;
+    font-size:15px;
+    font-weight:600;
+    border-bottom:1px solid rgba(255,255,255,0.14);
+    transition:background 0.2s ease;
+}
+
+.pill-dropdown-menu a:last-child{
+    border-bottom:none;
+}
+
+.pill-dropdown-menu a:hover{
+    background:rgba(255,255,255,0.12);
+}
+
+/* LOGIN */
+
+.login-btn{
+    background:#e84545;
+    color:#fff;
+    border:none;
+    padding:12px 28px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:700;
+    font-size:15px;
+    transition:0.3s;
+    white-space:nowrap;
+    flex-shrink:0;
+}
+
+.login-btn:hover{
     background:#c93030;
 }
 
-/* BOTON HAMBURGUESA */
+/* HAMBURGUESA */
 
 .menu-toggle{
     display:none;
-    width:44px;
-    height:44px;
-    border:none;
+    width:42px;
+    height:42px;
     background:transparent;
+    border:none;
     cursor:pointer;
-    padding:0;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    flex-shrink:0;
 }
 
 .menu-toggle span{
@@ -114,7 +207,6 @@ body{
     width:24px;
     height:2px;
     background:#333;
-    margin:5px auto;
     border-radius:2px;
 }
 
@@ -128,6 +220,11 @@ body{
     visibility:hidden;
     transition:0.3s ease;
     z-index:1098;
+}
+
+.mobile-menu-overlay.active{
+    opacity:1;
+    visibility:visible;
 }
 
 .mobile-menu{
@@ -147,11 +244,6 @@ body{
 
 .mobile-menu.active{
     right:0;
-}
-
-.mobile-menu-overlay.active{
-    opacity:1;
-    visibility:visible;
 }
 
 .mobile-menu-close{
@@ -190,7 +282,7 @@ body{
 .proyectos-hero{
     min-height:300px;
     background:
-    linear-gradient(rgba(8,39,55,0.75),rgba(8,39,55,0.75)),
+    linear-gradient(rgba(8,39,55,0.75), rgba(8,39,55,0.75)),
     url('img/proyectos.jpg') center/cover no-repeat;
     display:flex;
     align-items:center;
@@ -231,23 +323,25 @@ body{
 /* GRID */
 
 .proyectos-grid{
-    width:85%;
+    width:min(1200px, 90%);
     margin:70px auto;
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:40px;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:30px;
 }
 
 /* TARJETAS */
 
 .project-card{
     position:relative;
-    height:230px;
-    border-radius:16px;
+    min-height:260px;
+    border-radius:18px;
     overflow:hidden;
     box-shadow:0 15px 35px rgba(0,0,0,0.15);
     text-decoration:none;
     display:block;
+    background:#0c2d3d;
+    transition:box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .project-card img{
@@ -265,23 +359,25 @@ body{
     inset:0;
     background:linear-gradient(
         90deg,
-        rgba(0,0,0,0.75) 0%,
-        rgba(0,0,0,0.45) 40%,
-        rgba(0,0,0,0.1) 100%
+        rgba(0,0,0,0.78) 0%,
+        rgba(0,0,0,0.50) 42%,
+        rgba(0,0,0,0.15) 100%
     );
 }
 
 .project-content{
     position:absolute;
-    left:35px;
+    left:30px;
+    right:30px;
     top:50%;
     transform:translateY(-50%);
     color:white;
-    max-width:420px;
+    max-width:430px;
+    z-index:2;
 }
 
 .project-content h2{
-    font-size:26px;
+    font-size:28px;
     margin-bottom:10px;
     line-height:1.15;
 }
@@ -293,19 +389,20 @@ body{
     text-justify:inter-word;
 }
 
-/* HOVER */
+/* HOVER SOLO EN DISPOSITIVOS CON HOVER REAL */
 
-.project-card:hover img{
-    transform:scale(1.05);
+@media (hover: hover) and (pointer: fine){
+    .project-card:hover img{
+        transform:scale(1.05);
+    }
+
+    .project-card:hover{
+        box-shadow:0 20px 45px rgba(0,0,0,0.25);
+        transform:translateY(-2px);
+    }
 }
 
-.project-card:hover{
-    box-shadow:0 20px 45px rgba(0,0,0,0.25);
-}
-
-/* ========================= */
 /* TABLET */
-/* ========================= */
 
 @media (max-width: 1100px){
 
@@ -330,8 +427,9 @@ body{
         font-size:15px;
     }
 
-    .back-btn{
-        padding:11px 22px;
+    .pill-btn,
+    .login-btn{
+        padding:11px 20px;
         font-size:14px;
     }
 
@@ -355,18 +453,18 @@ body{
     }
 
     .proyectos-grid{
-        width:90%;
+        width:92%;
         margin:50px auto 60px;
         grid-template-columns:1fr;
         gap:24px;
     }
 
     .project-card{
-        height:220px;
+        min-height:230px;
     }
 
     .project-content{
-        max-width:380px;
+        max-width:400px;
     }
 
     .project-content h2{
@@ -378,9 +476,7 @@ body{
     }
 }
 
-/* ========================= */
 /* MOVIL */
-/* ========================= */
 
 @media (max-width: 768px){
 
@@ -391,7 +487,7 @@ body{
     .navbar{
         padding:0 16px;
         box-shadow:none;
-        gap:12px;
+        gap:10px;
     }
 
     .logo img{
@@ -402,18 +498,31 @@ body{
         display:none;
     }
 
-    .back-btn{
-        padding:8px 16px;
+    .nav-pills{
+        margin-left:auto;
+        gap:8px;
+    }
+
+    .pill-dropdown,
+    .pill-orange{
+        display:none;
+    }
+
+    .login-btn{
+        display:inline-flex;
+        padding:9px 18px;
         font-size:13px;
         border-radius:22px;
     }
 
     .menu-toggle{
-        display:block;
+        display:flex;
+        width:40px;
+        height:40px;
     }
 
     .proyectos-hero{
-        min-height:250px;
+        min-height:230px;
         padding:0 20px;
     }
 
@@ -435,6 +544,7 @@ body{
     .hero-content p{
         font-size:15px;
         line-height:1.5;
+        text-align:left;
     }
 
     .proyectos-grid{
@@ -446,13 +556,25 @@ body{
     }
 
     .project-card{
-        height:210px;
+        min-height:220px;
         border-radius:14px;
+    }
+
+    .project-overlay{
+        background:linear-gradient(
+            180deg,
+            rgba(0,0,0,0.20) 0%,
+            rgba(0,0,0,0.42) 45%,
+            rgba(0,0,0,0.82) 100%
+        );
     }
 
     .project-content{
         left:20px;
         right:20px;
+        top:auto;
+        bottom:18px;
+        transform:none;
         max-width:none;
     }
 
@@ -465,41 +587,65 @@ body{
     .project-content p{
         font-size:14px;
         line-height:1.5;
+        text-align:left;
+    }
+
+    .project-card img{
+        transform:none !important;
+    }
+
+    .mobile-menu{
+        width:280px;
+        padding:22px 20px 34px;
+    }
+
+    .mobile-menu-close{
+        font-size:34px;
+        margin-bottom:20px;
+    }
+
+    .mobile-nav-links{
+        gap:16px;
+    }
+
+    .mobile-nav-links a{
+        font-size:18px;
     }
 }
 
-/* ========================= */
 /* MOVIL PEQUEÑO */
-/* ========================= */
 
 @media (max-width: 480px){
 
     :root{
-        --nav-height:72px;
+        --nav-height:68px;
     }
 
     .navbar{
         padding:0 14px;
-        box-shadow:none;
     }
 
     .logo img{
         height:32px;
     }
 
-    .back-btn{
-        padding:7px 14px;
+    .login-btn{
+        padding:8px 16px;
         font-size:12px;
         border-radius:20px;
     }
 
     .menu-toggle{
-        width:40px;
-        height:40px;
+        width:38px;
+        height:38px;
+    }
+
+    .menu-toggle span{
+        width:22px;
     }
 
     .proyectos-hero{
-        min-height:220px;
+        min-height:210px;
         padding:0 16px;
     }
 
@@ -509,6 +655,7 @@ body{
 
     .hero-line{
         height:64px;
+        width:3px;
     }
 
     .hero-content h1{
@@ -528,13 +675,14 @@ body{
     }
 
     .project-card{
-        height:190px;
+        min-height:200px;
         border-radius:12px;
     }
 
     .project-content{
         left:16px;
         right:16px;
+        bottom:16px;
     }
 
     .project-content h2{
@@ -548,11 +696,16 @@ body{
     }
 
     .mobile-menu{
-        width:280px;
-        padding:22px 20px 34px;
+        width:260px;
+        padding:20px 18px 30px;
+    }
+
+    .mobile-menu-close{
+        font-size:32px;
+        margin-bottom:18px;
     }
 
     .mobile-nav-links a{
-        font-size:18px;
+        font-size:17px;
     }
 }

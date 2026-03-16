@@ -5,58 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publicaciones - SJM Bolivia</title>
     <link rel="stylesheet" href="publicaciones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
     <!-- NAVBAR -->
-<header class="navbar">
-    <div class="logo">
-        <a href="index.html">
-            <img src="sjm.png" alt="SJM Bolivia">
-        </a>
-    </div>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html" aria-label="Ir al inicio">
+                <img src="sjm.png" alt="SJM Bolivia">
+            </a>
+        </div>
 
-    <nav class="nav-menu">
-        <a href="index.html">Inicio</a>
-        <a href="quienes-somos.html">Quiénes Somos</a>
-        <a href="publicaciones.html" class="active">Publicaciones</a>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="#">Transparencia</a>
-    </nav>
+        <nav class="nav-menu" aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="quienes-somos.html">Quiénes Somos</a>
+            <a href="publicaciones.html" class="active">Publicaciones</a>
+            <a href="proyectos.html">Proyectos</a>
+        </nav>
 
-    <div class="nav-actions">
-        <a href="index.html" class="back-btn">Volver al inicio</a>
+        <div class="nav-pills">
+            <div class="pill-dropdown">
+                <button class="pill-btn pill-blue dropdown-toggle" type="button" aria-label="Abrir menú de orientación migratoria">
+                    Orientación Migratoria <i class="fa-solid fa-caret-down"></i>
+                </button>
 
-        <button class="menu-toggle" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-</header>
+                <div class="pill-dropdown-menu">
+                    <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+                    <a href="guias.html">Guías</a>
+                </div>
+            </div>
 
-<div class="mobile-menu-overlay"></div>
+            <a href="transparencia.html" class="pill-btn pill-orange">Transparencia</a>
+            <button class="login-btn" type="button">Login</button>
 
-<aside class="mobile-menu">
-    <button class="mobile-menu-close" aria-label="Cerrar menú">&times;</button>
+            <button class="menu-toggle" type="button" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
-    <nav class="mobile-nav-links">
-        <a href="index.html">Inicio</a>
-        <a href="quienes-somos.html">Quiénes Somos</a>
-        <a href="publicaciones.html">Publicaciones</a>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="#">Transparencia</a>
-    </nav>
-</aside>
+    <!-- MENU MOVIL -->
+    <div class="mobile-menu-overlay"></div>
 
-    <!-- HERO TITULO -->
+    <aside class="mobile-menu" aria-label="Menú móvil">
+        <button class="mobile-menu-close" type="button" aria-label="Cerrar menú">&times;</button>
+
+        <nav class="mobile-nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="quienes-somos.html">Quiénes Somos</a>
+            <a href="publicaciones.html">Publicaciones</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+            <a href="guias.html">Guías</a>
+            <a href="transparencia.html">Transparencia</a>
+        </nav>
+    </aside>
+
+    <!-- HERO -->
     <section class="publicaciones-hero">
-        <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="hero-line"></div>
-            <div>
+            <div class="hero-text">
                 <h1>Publicaciones</h1>
-                <p>Explora los principales tipos de publicaciones institucionales del SJM Bolivia.</p>
+                <p>
+                    Explora los principales tipos de publicaciones institucionales del SJM Bolivia.
+                </p>
             </div>
         </div>
     </section>
@@ -64,7 +80,7 @@
     <!-- TARJETAS -->
     <section class="publicaciones-grid">
 
-        <a href="boletines.html" class="pub-card">
+        <a href="boletines.html" class="pub-card" aria-label="Ir a Boletines">
             <img src="img/publi1.jpg" alt="Boletines">
             <div class="pub-overlay"></div>
 
@@ -81,7 +97,7 @@
             </div>
         </a>
 
-        <a href="informes.html" class="pub-card">
+        <a href="informes.html" class="pub-card" aria-label="Ir a Informes">
             <img src="img/publi2.jpg" alt="Informes">
             <div class="pub-overlay"></div>
 
@@ -98,7 +114,7 @@
             </div>
         </a>
 
-        <a href="articulos.html" class="pub-card">
+        <a href="articulos.html" class="pub-card" aria-label="Ir a Artículos">
             <img src="img/publi3.jpg" alt="Artículos">
             <div class="pub-overlay"></div>
 
@@ -115,7 +131,7 @@
             </div>
         </a>
 
-        <a href="investigaciones.html" class="pub-card">
+        <a href="investigaciones.html" class="pub-card" aria-label="Ir a Investigaciones">
             <img src="img/publi4.jpg" alt="Investigaciones">
             <div class="pub-overlay"></div>
 
@@ -133,6 +149,7 @@
         </a>
 
     </section>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>

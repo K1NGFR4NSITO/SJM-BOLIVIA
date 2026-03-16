@@ -120,3 +120,21 @@ if (mobileMenuClose) {
 if (mobileMenuOverlay) {
     mobileMenuOverlay.addEventListener("click", closeMobileMenu);
 }
+
+/* ========= DROPDOWN ORIENTACION MIGRATORIA ========= */
+
+const pillDropdown = document.querySelector(".pill-dropdown");
+const dropdownToggle = document.querySelector(".dropdown-toggle");
+
+if (dropdownToggle && pillDropdown) {
+    dropdownToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        pillDropdown.classList.toggle("active");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!pillDropdown.contains(e.target)) {
+            pillDropdown.classList.remove("active");
+        }
+    });
+}

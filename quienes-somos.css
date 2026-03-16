@@ -38,13 +38,19 @@ body{
     gap:30px;
 }
 
+.logo{
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+}
+
 .logo img{
     height:66px;
     width:auto;
     display:block;
 }
 
-/* MENU NAVBAR */
+/* MENU CENTRO */
 
 .nav-menu{
     display:flex;
@@ -72,41 +78,126 @@ body{
     color:#e67e22;
 }
 
-/* ACCIONES DERECHA */
+/* PILLS DERECHA */
 
-.nav-actions{
+.nav-pills{
     display:flex;
     align-items:center;
     gap:14px;
     flex-shrink:0;
 }
 
-.back-btn{
+.pill-dropdown{
+    position:relative;
+}
+
+.pill-btn{
+    border:none;
     text-decoration:none;
-    background:#e84545;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:13px 28px;
+    border-radius:30px;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.25s ease;
+    white-space:nowrap;
+}
+
+.pill-blue{
+    background:#0d5d8c;
     color:#fff;
-    padding:12px 28px;
-    border-radius:28px;
+}
+
+.pill-blue:hover{
+    background:#094c72;
+}
+
+.pill-orange{
+    background:#f4511e;
+    color:#fff;
+}
+
+.pill-orange:hover{
+    background:#d84315;
+}
+
+.pill-dropdown-menu{
+    position:absolute;
+    top:calc(100% + 10px);
+    left:0;
+    min-width:230px;
+    background:#0d5d8c;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.18);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(8px);
+    transition:0.25s ease;
+    z-index:1200;
+}
+
+.pill-dropdown.active .pill-dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.pill-dropdown-menu a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:14px 18px;
     font-size:15px;
     font-weight:600;
+    border-bottom:1px solid rgba(255,255,255,0.14);
+    transition:background 0.2s ease;
+}
+
+.pill-dropdown-menu a:last-child{
+    border-bottom:none;
+}
+
+.pill-dropdown-menu a:hover{
+    background:rgba(255,255,255,0.12);
+}
+
+/* LOGIN */
+
+.login-btn{
+    background:#e84545;
+    color:#fff;
+    border:none;
+    padding:12px 28px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:700;
+    font-size:15px;
     transition:0.3s;
     white-space:nowrap;
 }
 
-.back-btn:hover{
+.login-btn:hover{
     background:#c93030;
 }
 
-/* BOTON HAMBURGUESA */
+/* HAMBURGUESA */
 
 .menu-toggle{
     display:none;
-    width:44px;
-    height:44px;
-    border:none;
+    width:42px;
+    height:42px;
     background:transparent;
+    border:none;
     cursor:pointer;
-    padding:0;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
 }
 
 .menu-toggle span{
@@ -114,7 +205,6 @@ body{
     width:24px;
     height:2px;
     background:#333;
-    margin:5px auto;
     border-radius:2px;
 }
 
@@ -185,7 +275,7 @@ body{
     color:#f1b631;
 }
 
-/* SECCIONES GRANDES */
+/* SECCIONES */
 
 .about-hero{
     position:relative;
@@ -211,8 +301,6 @@ body{
     inset:0;
     background:rgba(0,0,0,0.45);
 }
-
-/* CONTENIDO */
 
 .about-content{
     position:relative;
@@ -263,8 +351,6 @@ body{
     flex-shrink:0;
 }
 
-/* POSICIONAMIENTO */
-
 .right-text .about-content{
     justify-content:flex-end;
 }
@@ -273,9 +359,7 @@ body{
     justify-content:flex-start;
 }
 
-/* ========================= */
 /* TABLET */
-/* ========================= */
 
 @media (max-width: 1100px){
     :root{
@@ -299,13 +383,10 @@ body{
         font-size:15px;
     }
 
-    .back-btn{
-        padding:11px 22px;
+    .pill-btn,
+    .login-btn{
+        padding:11px 20px;
         font-size:14px;
-    }
-
-    .about-hero{
-        min-height:calc(100dvh - var(--nav-height));
     }
 
     .about-content{
@@ -334,9 +415,7 @@ body{
     }
 }
 
-/* ========================= */
 /* MOVIL */
-/* ========================= */
 
 @media (max-width: 768px){
     :root{
@@ -345,32 +424,28 @@ body{
 
     .navbar{
         padding:0 16px;
-        box-shadow:none;
         gap:12px;
+        box-shadow:none;
     }
 
     .logo img{
         height:36px;
     }
 
-    .nav-menu{
+    .nav-menu,
+    .nav-pills{
         display:none;
     }
 
-    .back-btn{
-        padding:8px 16px;
-        font-size:13px;
-        border-radius:22px;
-    }
-
     .menu-toggle{
-        display:block;
+        display:flex;
+        margin-left:auto;
     }
 
     .about-hero{
-        min-height:78vh;
+        min-height:76vh;
         align-items:flex-end;
-        padding-bottom:36px;
+        padding-bottom:34px;
     }
 
     .about-content{
@@ -387,48 +462,43 @@ body{
     .about-text h2{
         font-size:30px;
         line-height:1.05;
-        margin-bottom:18px;
+        margin-bottom:16px;
     }
 
     .about-text p{
         font-size:15px;
-        line-height:1.58;
-        margin-bottom:14px;
+        line-height:1.56;
+        margin-bottom:12px;
     }
 
     .accent-line{
-        min-height:145px;
+        min-height:135px;
         margin-top:4px;
     }
 }
 
-/* ========================= */
 /* MOVIL PEQUEÑO */
-/* ========================= */
 
 @media (max-width: 480px){
     :root{
-        --nav-height:72px;
+        --nav-height:68px;
     }
 
     .navbar{
         padding:0 14px;
-        box-shadow:none;
     }
 
     .logo img{
         height:32px;
     }
 
-    .back-btn{
-        padding:7px 14px;
-        font-size:12px;
-        border-radius:20px;
-    }
-
     .menu-toggle{
         width:40px;
         height:40px;
+    }
+
+    .menu-toggle span{
+        width:22px;
     }
 
     .about-hero{
@@ -443,19 +513,19 @@ body{
 
     .about-text h1,
     .about-text h2{
-        font-size:25px;
+        font-size:24px;
         line-height:1.05;
-        margin-bottom:16px;
+        margin-bottom:14px;
     }
 
     .about-text p{
         font-size:14px;
-        line-height:1.52;
-        margin-bottom:12px;
+        line-height:1.5;
+        margin-bottom:10px;
     }
 
     .accent-line{
-        min-height:120px;
+        min-height:118px;
         width:3px;
     }
 

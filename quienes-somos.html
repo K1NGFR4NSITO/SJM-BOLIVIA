@@ -10,47 +10,61 @@
 <body>
 
     <!-- NAVBAR -->
-<header class="navbar">
-    <div class="logo">
-        <a href="index.html">
-            <img src="sjm.png" alt="SJM Bolivia">
-        </a>
-    </div>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="sjm.png" alt="SJM Bolivia">
+            </a>
+        </div>
 
-    <nav class="nav-menu">
-        <a href="index.html">Inicio</a>
-        <a href="quienes-somos.html" class="active">Quiénes Somos</a>
-        <a href="publicaciones.html">Publicaciones</a>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="#">Transparencia</a>
-    </nav>
+        <nav class="nav-menu">
+            <a href="index.html">Inicio</a>
+            <a href="quienes-somos.html" class="active">Quiénes Somos</a>
+            <a href="publicaciones.html">Publicaciones</a>
+            <a href="proyectos.html">Proyectos</a>
+        </nav>
 
-    <div class="nav-actions">
-        <a href="index.html" class="back-btn">Volver al inicio</a>
+        <div class="nav-pills">
+            <div class="pill-dropdown">
+                <button class="pill-btn pill-blue dropdown-toggle" type="button">
+                    Orientación Migratoria <i class="fa-solid fa-caret-down"></i>
+                </button>
+
+                <div class="pill-dropdown-menu">
+                    <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+                    <a href="guias.html">Guías</a>
+                </div>
+            </div>
+
+            <a href="transparencia.html" class="pill-btn pill-orange">Transparencia</a>
+            <button class="login-btn">Login</button>
+        </div>
 
         <button class="menu-toggle" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
         </button>
-    </div>
-</header>
+    </header>
 
-<div class="mobile-menu-overlay"></div>
+    <!-- MENU MOVIL -->
+    <div class="mobile-menu-overlay"></div>
 
-<aside class="mobile-menu">
-    <button class="mobile-menu-close" aria-label="Cerrar menú">&times;</button>
+    <aside class="mobile-menu">
+        <button class="mobile-menu-close" aria-label="Cerrar menú">&times;</button>
 
-    <nav class="mobile-nav-links">
-        <a href="index.html">Inicio</a>
-        <a href="quienes-somos.html">Quiénes Somos</a>
-        <a href="publicaciones.html">Publicaciones</a>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="#">Transparencia</a>
-    </nav>
-</aside>
+        <nav class="mobile-nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="quienes-somos.html">Quiénes Somos</a>
+            <a href="publicaciones.html">Publicaciones</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+            <a href="guias.html">Guías</a>
+            <a href="transparencia.html">Transparencia</a>
+        </nav>
+    </aside>
 
-    <!-- SECCION 1: TEXTO A LA DERECHA -->
+    <!-- SECCION 1 -->
     <section class="about-hero right-text">
         <img src="slide 1.jpeg" alt="Quiénes somos 1">
         <div class="overlay"></div>
@@ -60,60 +74,83 @@
             <div class="about-text">
                 <h1>QUIÉNES SOMOS</h1>
                 <p>
-                    El Servicio Jesuita a Migrantes acompaña, orienta y promueve procesos de acogida,
-                    inclusión y dignidad para personas migrantes y sus familias, fortaleciendo una
-                    convivencia más justa, humana e intercultural.
+El Servicio Jesuita a Migrantes (SJM) Bolivia es una obra de la Compañía de Jesús que acompaña, orienta y promueve la dignidad de las personas migrantes y sus familias. Desde su creación en 2010, trabaja especialmente en la ciudad de El Alto y otros espacios vinculados a la realidad migratoria, impulsando acciones de apoyo, formación e incidencia social.
+
+A través de un enfoque de hospitalidad, justicia e interculturalidad, el SJM Bolivia busca disminuir la vulnerabilidad de las personas migrantes, visibilizar el fenómeno migratorio y contribuir a la construcción de una convivencia más humana, solidaria e intercultural en la sociedad.
                 </p>
                 <p>
-                    Aquí puedes colocar el texto institucional completo sobre la identidad del SJM
-                    Bolivia, su misión, visión, alcance territorial y el sentido de su trabajo.
+
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- SECCION 2: TEXTO A LA IZQUIERDA -->
+    <!-- SECCION 2 -->
     <section class="about-hero left-text">
-        <img src="slide 2.jpg" alt="Nuestra labor">
+        <img src="qs1.jpg" alt="Nuestra labor">
         <div class="overlay"></div>
 
         <div class="about-content left">
             <div class="accent-line"></div>
             <div class="about-text">
-                <h2>NUESTRA LABOR</h2>
+                <h2>MISIÓN</h2>
                 <p>
-                    Desde un enfoque de derechos, hospitalidad y acompañamiento integral, el SJM Bolivia
-                    desarrolla acciones orientadas a la atención, orientación y fortalecimiento de personas
-                    en contextos de movilidad humana.
+                    La misión del SJM Bolivia es acompañar la migración vulnerable a través de la articulación de acciones con otros, la colaboración con las instituciones gubernamentales, civiles y eclesiales, y procesos de formación con todos los actores de la migración para aportar a la construcción de una convivencia intercultural.
                 </p>
                 <p>
-                    En este espacio puedes escribir más contenido sobre programas, líneas de acción,
-                    acompañamiento social, incidencia y articulación comunitaria.
+
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- SECCION 3: TEXTO A LA DERECHA -->
+    <!-- SECCION 3 -->
     <section class="about-hero right-text">
-        <img src="slide 3.jpeg" alt="Compromiso institucional">
+        <img src="qs3.jpg" alt="Compromiso institucional">
         <div class="overlay"></div>
 
         <div class="about-content right">
             <div class="accent-line"></div>
             <div class="about-text">
-                <h2>COMPROMISO INSTITUCIONAL</h2>
+                <h2>VISIÓN</h2>
                 <p>
-                    Nuestro compromiso es construir espacios de acogida y esperanza, promoviendo
-                    oportunidades, protección y acompañamiento para quienes enfrentan procesos
-                    migratorios en condiciones de vulnerabilidad.
+                    La visión del SJM Bolivia es que, en los próximos diez años, el Servicio Jesuita a Migrantes en Bolivia se constituya en un nodo relevante de la Red Jesuita con Migrantes, consolidándose como parte de una red internacional que promueve una ciudadanía global e intercultural fundamentada en la opción preferencial por las personas en situación de mayor vulnerabilidad.
                 </p>
                 <p>
-                    Aquí puedes seguir desarrollando el contenido institucional que necesites.
                 </p>
             </div>
         </div>
     </section>
-<script src="script.js"></script>
+
+    <!-- SECCION 4 -->
+    <section class="about-hero left-text">
+        <img src="qs4.jpg" alt="Nuestra labor">
+        <div class="overlay"></div>
+
+        <div class="about-content left">
+            <div class="accent-line"></div>
+            <div class="about-text">
+                <h2>OBJETIVOS ESTRATÉGICOS</h2>
+                <p>
+                    - Reducir la vulnerabilidad de personas migrantes
+Acompañar y orientar a migrantes y sus familias mediante acciones coordinadas con otras instituciones.
+                </p>
+                <p>
+- Visibilizar la realidad migratoria
+Promover la sensibilización social y la incidencia pública sobre la problemática migratoria.
+                </p>
+                <p>
+- Fomentar la convivencia intercultural
+Impulsar espacios de formación y diálogo que promuevan el respeto y la integración entre culturas.
+                </p>
+                <p>
+- Fortalecer el desarrollo institucional
+Consolidar capacidades, alianzas y recursos para ampliar el impacto del trabajo del SJM Bolivia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>

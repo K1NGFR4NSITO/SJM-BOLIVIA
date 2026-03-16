@@ -10,43 +10,62 @@
 <body>
 
     <!-- NAVBAR -->
-<header class="navbar">
-    <div class="logo">
-        <img src="sjm.png" alt="SJM Bolivia">
-    </div>
+    <header class="navbar">
+        <div class="logo">
+            <img src="sjm.png" alt="SJM Bolivia">
+        </div>
 
-    <nav class="nav-menu">
-        <a href="quienes-somos.html">Quiénes Somos</a>
-        <a href="publicaciones.html">Publicaciones</a>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="#">Transparencia</a>
-    </nav>
+        <nav class="nav-menu">
+            <a href="index.html">Inicio</a>
+            <a href="quienes-somos.html">Quiénes Somos</a>
+            <a href="publicaciones.html">Publicaciones</a>
+            <a href="proyectos.html">Proyectos</a>
+        </nav>
 
-    <div class="nav-actions">
-        <button class="login-btn">Login</button>
-
-        <button class="menu-toggle" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
+<div class="nav-pills">
+    <div class="pill-dropdown">
+        <button class="pill-btn pill-blue dropdown-toggle" type="button">
+            Orientación Migratoria <i class="fa-solid fa-caret-down"></i>
         </button>
+
+        <div class="pill-dropdown-menu">
+            <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+            <a href="guias.html">Guías</a>
+        </div>
     </div>
-</header>
 
-<!-- MENU MOVIL -->
-<div class="mobile-menu-overlay"></div>
+    <a href="transparencia.html" class="pill-btn pill-orange">
+        Transparencia
+    </a>
+</div>
 
-<aside class="mobile-menu">
-    <button class="mobile-menu-close" aria-label="Cerrar menú">&times;</button>
+        <div class="nav-actions">
+            <button class="login-btn">Login</button>
 
-    <nav class="mobile-nav-links">
-        <a href="index.html">Inicio</a>
-        <a href="quienes-somos.html">Quiénes Somos</a>
-        <a href="publicaciones.html">Publicaciones</a>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="#">Transparencia</a>
-    </nav>
-</aside>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MENU MOVIL -->
+    <div class="mobile-menu-overlay"></div>
+
+    <aside class="mobile-menu">
+        <button class="mobile-menu-close" aria-label="Cerrar menú">&times;</button>
+
+<nav class="mobile-nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="quienes-somos.html">Quiénes Somos</a>
+    <a href="publicaciones.html">Publicaciones</a>
+    <a href="proyectos.html">Proyectos</a>
+    <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+    <a href="guias.html">Guías</a>
+    <a href="transparencia.html">Transparencia</a>
+</nav>
+    </aside>
 
     <!-- REDES SOCIALES -->
     <div class="social-bar">
@@ -112,80 +131,188 @@
 
     </section>
 
-    <!-- UBICACION -->
-<section class="contact-showcase">
+    <!-- SECCION INFORMACION -->
+    <section class="info-section">
 
-    <div class="contact-top">
+        <!-- FILA SUPERIOR -->
+        <div class="info-top-grid">
 
-        <div class="contact-map">
-            <iframe
-                src="https://maps.google.com/maps?q=SJM%20Servicio%20Jesuita%20a%20Migrantes%20Bolivia&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                frameborder="0"
-                allowfullscreen>
-            </iframe>
+            <a href="#" class="info-top-card">
+                <img src="migrantes-mundo.jpg" alt="Servicio Jesuita a Migrantes y Refugiados en el Mundo">
+                <div class="info-top-overlay"></div>
+                <h3>SERVICIO JESUITA A MIGRANTES Y REFUGIADOS EN EL MUNDO</h3>
+            </a>
+
+            <a href="#" class="info-top-card">
+                <img src="oficinas-chile.jpg" alt="Oficinas en Chile">
+                <div class="info-top-overlay"></div>
+                <h3>OFICINAS EN CHILE</h3>
+            </a>
+
         </div>
 
-        <div class="contact-card contact-orange">
-            <div class="contact-icon">
-                <i class="fa-regular fa-address-book"></i>
+        <!-- FILA INFERIOR -->
+        <div class="info-grid">
+
+            <!-- HISTORIAS -->
+            <div class="info-card card-yellow">
+                <h3>HISTORIAS DE MIGRANTES</h3>
+
+                <div class="info-img">
+                    <img src="dona.jpg" alt="Historia 1">
+                    <span>HISTORIA 1</span>
+                </div>
+
+                <div class="info-img">
+                    <img src="hazte-socio.jpg" alt="Historia 2">
+                    <span>HISTORIA 2</span>
+                </div>
             </div>
-            <h3>Información de contacto:</h3>
-            <p>
-                Calle Ficticia 123<br>
-                El Alto - La Paz - Bolivia
-            </p>
-        </div>
 
-        <div class="contact-card contact-green">
-            <div class="contact-icon">
-                <i class="fa-regular fa-envelope"></i>
+            <!-- CIFRAS -->
+            <div class="info-card card-blue">
+                <h3>CIFRAS</h3>
+
+                <h2>1.608.650</h2>
+                <p>Personas migrantes viven en Chile.<br>(Censo 2024)</p>
+
+                <img src="grafico.png" alt="Gráfico migración" class="grafico">
             </div>
-            <h3>Correo electrónico:</h3>
-            <p>contacto@sjmbolivia.org</p>
+
+            <!-- TRANSPARENCIA -->
+            <div class="info-card card-red">
+                <h3>TRANSPARENCIA</h3>
+
+                <h2>1.412.264.226</h2>
+                <p>Recaudados en 2024</p>
+
+                <div class="barra">
+                    <div class="barra-top">
+                        <span>Alianzas empresas o instituciones privadas</span>
+                        <strong>73%</strong>
+                    </div>
+                    <div class="progress"><div style="width:73%"></div></div>
+                </div>
+
+                <div class="barra">
+                    <div class="barra-top">
+                        <span>Fondos concursables y proyectos</span>
+                        <strong>9%</strong>
+                    </div>
+                    <div class="progress"><div style="width:9%"></div></div>
+                </div>
+
+                <div class="barra">
+                    <div class="barra-top">
+                        <span>Donaciones Socios</span>
+                        <strong>9%</strong>
+                    </div>
+                    <div class="progress"><div style="width:9%"></div></div>
+                </div>
+
+                <div class="barra">
+                    <div class="barra-top">
+                        <span>Compañía de Jesús</span>
+                        <strong>6%</strong>
+                    </div>
+                    <div class="progress"><div style="width:6%"></div></div>
+                </div>
+
+                <div class="barra">
+                    <div class="barra-top">
+                        <span>Donaciones individuales</span>
+                        <strong>3%</strong>
+                    </div>
+                    <div class="progress"><div style="width:3%"></div></div>
+                </div>
+
+                <div class="barra">
+                    <div class="barra-top">
+                        <span>Ingresos no operacionales</span>
+                        <strong>0%</strong>
+                    </div>
+                    <div class="progress"><div style="width:0%"></div></div>
+                </div>
+            </div>
+
         </div>
 
-    </div>
+    </section>
 
-    <div class="contact-bottom">
+    <!-- UBICACION / CONTACTO -->
+    <section class="contact-showcase" id="donaciones">
 
-        <div class="contact-bottom-overlay"></div>
+        <div class="contact-top">
 
-        <div class="contact-bottom-content">
+            <div class="contact-map">
+                <iframe
+                    src="https://maps.google.com/maps?q=SJM%20Servicio%20Jesuita%20a%20Migrantes%20Bolivia&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
 
-            <div class="contact-info-text">
-                <h2>Donaciones</h2>
+            <div class="contact-card contact-orange">
+                <div class="contact-icon">
+                    <i class="fa-regular fa-address-book"></i>
+                </div>
+                <h3>Información de contacto:</h3>
                 <p>
-                    Aquí puedes colocar una breve descripción institucional del lugar, 
-                    la ubicación de la oficina, referencias principales y cualquier 
-                    información útil para personas que deseen aproximarse al SJM Bolivia.
-                </p>
-                <p>
-                    Nuestro equipo atiende de lunes a viernes en horarios de oficina y 
-                    brinda orientación, acompañamiento y apoyo en distintos servicios.
+                    Calle Ficticia 123<br>
+                    El Alto - La Paz - Bolivia
                 </p>
             </div>
 
-            <form class="contact-form">
-                <input type="text" placeholder="Escriba su nombre y apellidos">
-                <input type="email" placeholder="Escriba su correo electrónico">
-                <input type="text" placeholder="Escriba el nombre de su ciudad">
-
-                <label class="contact-check">
-                    <input type="checkbox">
-                    <span>
-                        Declaro que he leído la Política de Privacidad y doy mi consentimiento
-                        para el uso de los datos que proporciono.
-                    </span>
-                </label>
-
-                <button type="submit">ENVIAR</button>
-            </form>
+            <div class="contact-card contact-green">
+                <div class="contact-icon">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <h3>Correo electrónico:</h3>
+                <p>contacto@sjmbolivia.org</p>
+            </div>
 
         </div>
 
-    </div>
+        <div class="contact-bottom">
 
-</section>
+            <div class="contact-bottom-overlay"></div>
+
+            <div class="contact-bottom-content">
+
+                <div class="contact-info-text">
+                    <h2>Donaciones</h2>
+                    <p>
+                        Aquí puedes colocar una breve descripción institucional del lugar, 
+                        la ubicación de la oficina, referencias principales y cualquier 
+                        información útil para personas que deseen aproximarse al SJM Bolivia.
+                    </p>
+                    <p>
+                        Nuestro equipo atiende de lunes a viernes en horarios de oficina y 
+                        brinda orientación, acompañamiento y apoyo en distintos servicios.
+                    </p>
+                </div>
+
+                <form class="contact-form">
+                    <input type="text" placeholder="Escriba su nombre y apellidos">
+                    <input type="email" placeholder="Escriba su correo electrónico">
+                    <input type="text" placeholder="Escriba el nombre de su ciudad">
+
+                    <label class="contact-check">
+                        <input type="checkbox">
+                        <span>
+                            Declaro que he leído la Política de Privacidad y doy mi consentimiento
+                            para el uso de los datos que proporciono.
+                        </span>
+                    </label>
+
+                    <button type="submit">ENVIAR</button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
 
     <script src="script.js"></script>
 </body>
