@@ -17,10 +17,38 @@
         </div>
 
         <nav class="nav-menu" aria-label="Navegación principal">
-            <a href="index.html">Inicio</a>
-            <a href="quienes-somos.html">Quiénes Somos</a>
-            <a href="publicaciones.html">Publicaciones</a>
-            <a href="proyectos.html" class="active">Proyectos</a>
+            <a href="index.html" class="nav-main-link">Inicio</a>
+
+            <div class="nav-dropdown">
+                <a href="quienes-somos.html" class="nav-main-link">Quiénes Somos</a>
+                <div class="nav-dropdown-menu">
+                    <a href="quienes-somos.html#mision">Misión</a>
+                    <a href="quienes-somos.html#vision">Visión</a>
+                    <a href="quienes-somos.html#objetivos">Objetivos Estratégicos</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <a href="publicaciones.html" class="nav-main-link">Publicaciones</a>
+                <div class="nav-dropdown-menu">
+                    <a href="publicaciones.html#sin-fronteras">Sin Fronteras</a>
+                    <a href="publicaciones.html#el-canto-del-tordo">El Canto del Tordo</a>
+                    <a href="publicaciones.html#notas-informativas">Notas informativas</a>
+                    <a href="publicaciones.html#encuentros-jrf">Encuentros JRF</a>
+                    <a href="publicaciones.html#historias-de-vida">Historias de vida</a>
+                    <a href="publicaciones.html#guia">Guía: Construyendo espacios interculturales</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <a href="proyectos.html" class="nav-main-link active">Proyectos</a>
+                <div class="nav-dropdown-menu">
+                    <a href="proyectos.html#proyecto-migrantes">Proyecto Migrantes</a>
+                    <a href="proyectos.html#proyecto-emprendimientos">Proyecto Emprendimientos</a>
+                    <a href="proyectos.html#proyecto-jovenes">Proyecto Jóvenes</a>
+                    <a href="proyectos.html#rompiendo-fronteras">Rompiendo Fronteras</a>
+                </div>
+            </div>
         </nav>
 
         <div class="nav-pills">
@@ -53,9 +81,38 @@
 
         <nav class="mobile-nav-links">
             <a href="index.html">Inicio</a>
-            <a href="quienes-somos.html">Quiénes Somos</a>
-            <a href="publicaciones.html">Publicaciones</a>
-            <a href="proyectos.html">Proyectos</a>
+
+            <div class="mobile-nav-group">
+                <a href="quienes-somos.html">Quiénes Somos</a>
+                <div class="mobile-submenu">
+                    <a href="quienes-somos.html#mision">Misión</a>
+                    <a href="quienes-somos.html#vision">Visión</a>
+                    <a href="quienes-somos.html#objetivos">Objetivos Estratégicos</a>
+                </div>
+            </div>
+
+            <div class="mobile-nav-group">
+                <a href="publicaciones.html">Publicaciones</a>
+                <div class="mobile-submenu">
+                    <a href="publicaciones.html#sin-fronteras">Sin Fronteras</a>
+                    <a href="publicaciones.html#el-canto-del-tordo">El Canto del Tordo</a>
+                    <a href="publicaciones.html#notas-informativas">Notas informativas</a>
+                    <a href="publicaciones.html#encuentros-jrf">Encuentros JRF</a>
+                    <a href="publicaciones.html#historias-de-vida">Historias de vida</a>
+                    <a href="publicaciones.html#guia">Guía: Construyendo espacios interculturales</a>
+                </div>
+            </div>
+
+            <div class="mobile-nav-group">
+                <a href="proyectos.html">Proyectos</a>
+                <div class="mobile-submenu">
+                    <a href="proyectos.html#proyecto-migrantes">Proyecto Migrantes</a>
+                    <a href="proyectos.html#proyecto-emprendimientos">Proyecto Emprendimientos</a>
+                    <a href="proyectos.html#proyecto-jovenes">Proyecto Jóvenes</a>
+                    <a href="proyectos.html#rompiendo-fronteras">Rompiendo Fronteras</a>
+                </div>
+            </div>
+
             <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
             <a href="guias.html">Guías</a>
             <a href="transparencia.html">Transparencia</a>
@@ -74,11 +131,11 @@
 
     <section class="proyectos-grid">
 
-        <a href="#" class="project-card">
-            <img src="img/proyecto1.jpg" alt="Programa de Acompañamiento Migrante">
+        <a href="#" class="project-card" id="proyecto-migrantes">
+            <img src="img/proyecto1.jpg" alt="Proyecto Migrantes">
             <div class="project-overlay"></div>
             <div class="project-content">
-                <h2>Programa de Acompañamiento Migrante</h2>
+                <h2>Proyecto Migrantes</h2>
                 <p>
                     Iniciativa orientada a brindar orientación legal, social y acompañamiento
                     a personas migrantes en situación de vulnerabilidad.
@@ -86,106 +143,104 @@
             </div>
         </a>
 
-        <a href="#" class="project-card">
-            <img src="img/proyecto2.jpg" alt="Interculturalidad y Juventud">
+        <a href="#" class="project-card" id="proyecto-emprendimientos">
+            <img src="img/proyecto2.jpg" alt="Proyecto Emprendimientos">
             <div class="project-overlay"></div>
             <div class="project-content">
-                <h2>Interculturalidad y Juventud</h2>
+                <h2>Proyecto Emprendimientos</h2>
                 <p>
-                    Procesos de formación para jóvenes que promueven convivencia intercultural
-                    y participación social en contextos migratorios.
+                    Procesos orientados a fortalecer capacidades, iniciativas productivas
+                    y medios de vida de población migrante y sus familias.
                 </p>
             </div>
         </a>
 
-        <a href="#" class="project-card">
-            <img src="img/proyecto3.jpg" alt="Investigación sobre movilidad humana">
+        <a href="#" class="project-card" id="proyecto-jovenes">
+            <img src="img/proyecto3.jpg" alt="Proyecto Jóvenes">
             <div class="project-overlay"></div>
             <div class="project-content">
-                <h2>Investigación sobre movilidad humana</h2>
+                <h2>Proyecto Jóvenes</h2>
                 <p>
-                    Producción de estudios que analizan las dinámicas migratorias
-                    y los desafíos sociales asociados.
+                    Espacios de formación y participación para juventudes, promoviendo
+                    convivencia intercultural, liderazgo y compromiso social.
                 </p>
             </div>
         </a>
 
-        <a href="#" class="project-card">
-            <img src="img/proyecto4.jpg" alt="Hospitalidad y acogida">
+        <a href="#" class="project-card" id="rompiendo-fronteras">
+            <img src="img/proyecto4.jpg" alt="Rompiendo Fronteras">
             <div class="project-overlay"></div>
             <div class="project-content">
-                <h2>Hospitalidad y acogida</h2>
+                <h2>Rompiendo Fronteras</h2>
                 <p>
-                    Acciones orientadas a fortalecer redes de acogida
-                    y apoyo comunitario a población migrante.
+                    Acciones orientadas a fortalecer redes de acogida, integración
+                    y apoyo comunitario frente a los desafíos de la movilidad humana.
                 </p>
             </div>
         </a>
 
     </section>
 
-
-<footer class="site-footer">
-    <div class="footer-stripe">
-        <span class="stripe-blue"></span>
-        <span class="stripe-orange"></span>
-        <span class="stripe-red"></span>
-    </div>
-
-    <div class="footer-main">
-        <div class="footer-brand">
-            <div class="footer-logo-box">
-                <img src="sjm.png" alt="SJM Bolivia">
-            </div>
-            <p>
-                El Servicio Jesuita a Migrantes en Bolivia acompaña, orienta y promueve la dignidad
-                de las personas migrantes mediante acciones de acogida, protección e integración.
-            </p>
+    <footer class="site-footer">
+        <div class="footer-stripe">
+            <span class="stripe-blue"></span>
+            <span class="stripe-orange"></span>
+            <span class="stripe-red"></span>
         </div>
 
-        <div class="footer-links-wrap">
-            <div class="footer-column">
-                <h3>Navegación</h3>
-                <a href="index.html">Inicio</a>
-                <a href="quienes-somos.html">Quiénes Somos</a>
-                <a href="publicaciones.html">Publicaciones</a>
-                <a href="proyectos.html">Proyectos</a>
+        <div class="footer-main">
+            <div class="footer-brand">
+                <div class="footer-logo-box">
+                    <img src="sjm.png" alt="SJM Bolivia">
+                </div>
+                <p>
+                    El Servicio Jesuita a Migrantes en Bolivia acompaña, orienta y promueve la dignidad
+                    de las personas migrantes mediante acciones de acogida, protección e integración.
+                </p>
             </div>
 
-            <div class="footer-column">
-                <h3>Orientación y recursos</h3>
-                <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
-                <a href="guias.html">Guías</a>
-                <a href="#">Informe sobre movilidad humana 2026</a>
-                <a href="#">Boletín institucional</a>
-            </div>
+            <div class="footer-links-wrap">
+                <div class="footer-column">
+                    <h3>Navegación</h3>
+                    <a href="index.html">Inicio</a>
+                    <a href="quienes-somos.html">Quiénes Somos</a>
+                    <a href="publicaciones.html">Publicaciones</a>
+                    <a href="proyectos.html">Proyectos</a>
+                </div>
 
-            <div class="footer-column">
-                <h3>Contacto</h3>
-                <a href="mailto:lapaz@sjmbolivia.org">lapaz@sjmbolivia.org</a>
-                <a href="mailto:elalto@sjmbolivia.org">elalto@sjmbolivia.org</a>
-                <a href="transparencia.html">Transparencia</a>
+                <div class="footer-column">
+                    <h3>Orientación y recursos</h3>
+                    <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+                    <a href="guias.html">Guías</a>
+                    <a href="#">Informe sobre movilidad humana 2026</a>
+                    <a href="#">Boletín institucional</a>
+                </div>
 
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <a href="mailto:lapaz@sjmbolivia.org">lapaz@sjmbolivia.org</a>
+                    <a href="mailto:elalto@sjmbolivia.org">elalto@sjmbolivia.org</a>
+                    <a href="transparencia.html">Transparencia</a>
+
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        <p>© Servicio Jesuita a Migrantes Bolivia</p>
-        <div class="footer-bottom-links">
-            <a href="#">Política de privacidad</a>
-            <a href="transparencia.html">Transparencia</a>
+        <div class="footer-bottom">
+            <p>© Servicio Jesuita a Migrantes Bolivia</p>
+            <div class="footer-bottom-links">
+                <a href="#">Política de privacidad</a>
+                <a href="transparencia.html">Transparencia</a>
+            </div>
         </div>
-    </div>
-</footer>
-
+    </footer>
 
     <script src="script.js"></script>
 </body>

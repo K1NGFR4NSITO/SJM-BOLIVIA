@@ -61,11 +61,12 @@ section{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:48px;
+    gap:42px;
     flex:1;
+    position:relative;
 }
 
-.nav-menu a{
+.nav-main-link{
     text-decoration:none;
     color:#202020;
     font-size:17px;
@@ -73,14 +74,66 @@ section{
     letter-spacing:0.3px;
     transition:color 0.25s ease;
     white-space:nowrap;
+    display:inline-flex;
+    align-items:center;
+    height:var(--nav-height);
 }
 
-.nav-menu a:hover{
+.nav-main-link:hover{
     color:#e67e22;
 }
 
-.nav-menu a.active{
+.nav-main-link.active{
     color:#e67e22;
+}
+
+.nav-dropdown{
+    position:relative;
+    display:flex;
+    align-items:center;
+    height:var(--nav-height);
+}
+
+.nav-dropdown-menu{
+    position:absolute;
+    top:100%;
+    left:50%;
+    transform:translateX(-50%) translateY(12px);
+    min-width:280px;
+    background:#ffffff;
+    border-radius:0 0 12px 12px;
+    padding:16px 22px 18px;
+    box-shadow:0 18px 35px rgba(0,0,0,0.14);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index:1300;
+    border-top:3px solid #f1b631;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-menu a{
+    display:block;
+    text-decoration:none;
+    color:#222;
+    font-size:15px;
+    font-weight:500;
+    line-height:1.4;
+    padding:4px 0;
+    white-space:normal;
+    transition:color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-dropdown-menu a:hover{
+    color:#e67e22;
+    transform:translateX(3px);
 }
 
 /* ACCIONES DERECHA */
@@ -188,16 +241,45 @@ section{
     gap:18px;
 }
 
-.mobile-nav-links a{
+.mobile-nav-links > a,
+.mobile-nav-group > a{
     text-decoration:none;
     color:#fff;
     font-size:20px;
-    font-weight:500;
+    font-weight:600;
     line-height:1.3;
+    transition:0.25s ease;
+    display:block;
+}
+
+.mobile-nav-links > a:hover,
+.mobile-nav-group > a:hover{
+    color:#f1b631;
+}
+
+.mobile-nav-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.mobile-submenu{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    padding-left:14px;
+    border-left:2px solid rgba(241,182,49,0.5);
+}
+
+.mobile-submenu a{
+    text-decoration:none;
+    color:rgba(255,255,255,0.82);
+    font-size:15px;
+    line-height:1.35;
     transition:0.25s ease;
 }
 
-.mobile-nav-links a:hover{
+.mobile-submenu a:hover{
     color:#f1b631;
 }
 
@@ -238,61 +320,58 @@ section{
 
 .overlay{
     position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.35);
+    inset:0;
+    background:rgba(0,0,0,0.38);
     z-index:1;
 }
 
-/* TITULO */
+/* TEXTO DEL CARRUSEL UNIFICADO */
 
-.slide-title{
+.slide-content{
     position:absolute;
-    left:70px;
+    right:90px;
     bottom:90px;
     display:flex;
     align-items:flex-start;
     gap:18px;
-    max-width:540px;
+    max-width:650px;
     z-index:2;
 }
 
 .title-line{
     width:4px;
-    height:92px;
+    height:72px;
     background:#f1b631;
     border-radius:2px;
     margin-top:4px;
     flex-shrink:0;
 }
 
-.slide-title h1{
+.slide-text{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    text-align:left;
+}
+
+.slide-text h1{
     color:#fff;
     font-size:48px;
     line-height:1.05;
     font-weight:700;
     text-transform:uppercase;
+    margin:0;
+    max-width:580px;
 }
 
-/* DESCRIPCION */
-
-.slide-description{
-    position:absolute;
-    right:90px;
-    bottom:105px;
-    max-width:430px;
-    z-index:2;
-    text-align:left;
-}
-
-.slide-description p{
+.slide-text p{
     color:#ffffff;
     font-size:22px;
     line-height:1.45;
     font-weight:500;
     text-shadow:0 2px 6px rgba(0,0,0,0.25);
+    margin:0;
+    max-width:520px;
 }
 
 /* REDES SOCIALES */
@@ -1085,7 +1164,7 @@ section{
         gap:24px;
     }
 
-    .nav-menu a{
+    .nav-main-link{
         font-size:15px;
     }
 
@@ -1112,28 +1191,24 @@ section{
         min-height:460px;
     }
 
-    .slide-title{
-        left:36px;
-        bottom:86px;
-        max-width:420px;
+    .slide-content{
+        right:36px;
+        bottom:70px;
+        max-width:500px;
+        gap:14px;
     }
 
     .title-line{
-        height:78px;
+        height:62px;
     }
 
-    .slide-title h1{
+    .slide-text h1{
         font-size:38px;
     }
 
-    .slide-description{
-        right:36px;
-        bottom:92px;
-        max-width:320px;
-    }
-
-    .slide-description p{
+    .slide-text p{
         font-size:18px;
+        max-width:380px;
     }
 
     .location-container{
@@ -1254,35 +1329,35 @@ section{
         min-height:420px;
     }
 
-    .slide-title{
-        left:20px;
-        right:20px;
-        bottom:110px;
-        max-width:none;
-        gap:10px;
-    }
-
-    .title-line{
-        height:64px;
-        margin-top:2px;
-    }
-
-    .slide-title h1{
-        font-size:28px;
-        line-height:1.05;
-    }
-
-    .slide-description{
+    .slide-content{
         left:20px;
         right:20px;
         bottom:52px;
         max-width:none;
-        text-align:left;
+        gap:12px;
+        align-items:flex-start;
     }
 
-    .slide-description p{
+    .title-line{
+        width:4px;
+        height:56px;
+        margin-top:2px;
+    }
+
+    .slide-text{
+        gap:10px;
+    }
+
+    .slide-text h1{
+        font-size:28px;
+        line-height:1.05;
+        max-width:100%;
+    }
+
+    .slide-text p{
         font-size:15px;
         line-height:1.45;
+        max-width:100%;
     }
 
     .social-bar{
@@ -1562,28 +1637,26 @@ section{
         min-height:390px;
     }
 
-    .slide-title{
+    .slide-content{
         left:16px;
         right:16px;
-        bottom:100px;
+        bottom:40px;
+        gap:10px;
     }
 
     .title-line{
-        height:54px;
+        width:3px;
+        height:48px;
     }
 
-    .slide-title h1{
-        font-size:23px;
+    .slide-text h1{
+        font-size:22px;
+        line-height:1.05;
     }
 
-    .slide-description{
-        left:16px;
-        right:16px;
-        bottom:44px;
-    }
-
-    .slide-description p{
+    .slide-text p{
         font-size:14px;
+        line-height:1.4;
     }
 
     .social-bar{

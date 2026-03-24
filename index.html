@@ -12,14 +12,49 @@
     <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo">
-            <img src="sjm.png" alt="SJM Bolivia">
+            <a href="index.html">
+                <img src="sjm.png" alt="SJM Bolivia">
+            </a>
         </div>
 
         <nav class="nav-menu">
-            <a href="index.html">Inicio</a>
-            <a href="quienes-somos.html">Quiénes Somos</a>
-            <a href="publicaciones.html">Publicaciones</a>
-            <a href="proyectos.html">Proyectos</a>
+
+            <a href="index.html" class="nav-main-link">Inicio</a>
+
+            <!-- QUIÉNES SOMOS -->
+            <div class="nav-dropdown">
+                <a href="quienes-somos.html" class="nav-main-link">Quiénes Somos</a>
+                <div class="nav-dropdown-menu">
+                    <a href="quienes-somos.html#mision">Misión</a>
+                    <a href="quienes-somos.html#vision">Visión</a>
+                    <a href="quienes-somos.html#objetivos">Objetivos Estratégicos</a>
+                </div>
+            </div>
+
+            <!-- PUBLICACIONES -->
+            <div class="nav-dropdown">
+                <a href="publicaciones.html" class="nav-main-link">Publicaciones</a>
+                <div class="nav-dropdown-menu">
+                    <a href="publicaciones.html#sin-fronteras">Sin Fronteras</a>
+                    <a href="publicaciones.html#el-canto-del-tordo">El Canto del Tordo</a>
+                    <a href="publicaciones.html#notas-informativas">Notas informativas</a>
+                    <a href="publicaciones.html#encuentros-jrf">Encuentros JRF</a>
+                    <a href="publicaciones.html#historias-de-vida">Historias de vida</a>
+                    <a href="publicaciones.html#guia">Guía: Construyendo espacios interculturales</a>
+                </div>
+            </div>
+
+            <!-- PROYECTOS -->
+            <div class="nav-dropdown">
+                <a href="proyectos.html" class="nav-main-link">Proyectos</a>
+                <div class="nav-dropdown-menu">
+                    <a href="proyectos.html#proyecto-migrantes">Proyecto Migrantes</a>
+                    <a href="proyectos.html#proyecto-emprendimientos">Proyecto Emprendimientos</a>
+                    <a href="proyectos.html#proyecto-jovenes">Proyecto Jóvenes</a>
+                    <a href="proyectos.html#rompiendo-fronteras">Rompiendo Fronteras</a>
+                </div>
+            </div>
+
         </nav>
 
         <div class="nav-pills">
@@ -50,7 +85,7 @@
         </div>
     </header>
 
-    <!-- MENU MOVIL -->
+    <!-- MENÚ MÓVIL -->
     <div class="mobile-menu-overlay"></div>
 
     <aside class="mobile-menu">
@@ -58,9 +93,38 @@
 
         <nav class="mobile-nav-links">
             <a href="index.html">Inicio</a>
-            <a href="quienes-somos.html">Quiénes Somos</a>
-            <a href="publicaciones.html">Publicaciones</a>
-            <a href="proyectos.html">Proyectos</a>
+
+            <div class="mobile-nav-group">
+                <a href="quienes-somos.html">Quiénes Somos</a>
+                <div class="mobile-submenu">
+                    <a href="quienes-somos.html#mision">Misión</a>
+                    <a href="quienes-somos.html#vision">Visión</a>
+                    <a href="quienes-somos.html#objetivos">Objetivos Estratégicos</a>
+                </div>
+            </div>
+
+            <div class="mobile-nav-group">
+                <a href="publicaciones.html">Publicaciones</a>
+                <div class="mobile-submenu">
+                    <a href="publicaciones.html#sin-fronteras">Sin Fronteras</a>
+                    <a href="publicaciones.html#el-canto-del-tordo">El Canto del Tordo</a>
+                    <a href="publicaciones.html#notas-informativas">Notas informativas</a>
+                    <a href="publicaciones.html#encuentros-jrf">Encuentros JRF</a>
+                    <a href="publicaciones.html#historias-de-vida">Historias de vida</a>
+                    <a href="publicaciones.html#guia">Guía: Construyendo espacios interculturales</a>
+                </div>
+            </div>
+
+            <div class="mobile-nav-group">
+                <a href="proyectos.html">Proyectos</a>
+                <div class="mobile-submenu">
+                    <a href="proyectos.html#proyecto-migrantes">Proyecto Migrantes</a>
+                    <a href="proyectos.html#proyecto-emprendimientos">Proyecto Emprendimientos</a>
+                    <a href="proyectos.html#proyecto-jovenes">Proyecto Jóvenes</a>
+                    <a href="proyectos.html#rompiendo-fronteras">Rompiendo Fronteras</a>
+                </div>
+            </div>
+
             <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
             <a href="guias.html">Guías</a>
             <a href="transparencia.html">Transparencia</a>
@@ -94,13 +158,14 @@
                 <img src="slide 1.jpeg" alt="Slide 1">
                 <div class="overlay"></div>
 
-                <div class="slide-title">
+                <div class="slide-content">
                     <div class="title-line"></div>
-                    <h1>Hospitalidad y Justicia</h1>
-                </div>
-
-                <div class="slide-description">
-                    <p>Trabajando por las personas migrantes.</p>
+                    <div class="slide-text">
+                        <h1>Hospitalidad y Justicia</h1>
+                        <p>Acoger con dignidad y actuar con equidad. 
+Trabajando por las personas migrantes.
+</p>
+                    </div>
                 </div>
             </div>
 
@@ -108,13 +173,12 @@
                 <img src="slide 2.jpg" alt="Slide 2">
                 <div class="overlay"></div>
 
-                <div class="slide-title">
+                <div class="slide-content">
                     <div class="title-line"></div>
-                    <h1>Acompañar, proteger y servir</h1>
-                </div>
-
-                <div class="slide-description">
-                    <p>Acciones institucionales al servicio de la dignidad humana.</p>
+                    <div class="slide-text">
+                        <h1>Construyendo esperanza</h1>
+                        <p>Desde el trabajo conjunto y la inclusión: Promovemos inclusión, acogida y oportunidades para población migrante.</p>
+                    </div>
                 </div>
             </div>
 
@@ -122,13 +186,14 @@
                 <img src="slide 3.jpeg" alt="Slide 3">
                 <div class="overlay"></div>
 
-                <div class="slide-title">
+                <div class="slide-content">
                     <div class="title-line"></div>
-                    <h1>Construyendo esperanza</h1>
-                </div>
-
-                <div class="slide-description">
-                    <p>Promovemos inclusión, acogida y oportunidades para población migrante.</p>
+                    <div class="slide-text">
+                        <h1>Acompañar, proteger y servir</h1>
+                        <p>Tenemos las puertas y los brazos abiertos 
+Acciones institucionales al servicio de la dignidad humana.
+</p>
+                    </div>
                 </div>
             </div>
 
@@ -137,7 +202,7 @@
         <div class="carousel-dots"></div>
     </section>
 
-    <!-- SECCION INFORMACION -->
+    <!-- SECCIÓN INFORMACIÓN -->
     <section class="info-section">
 
         <div class="info-top-grid">
@@ -172,10 +237,8 @@
 
             <div class="info-card card-blue">
                 <h3>CIFRAS</h3>
-
                 <h2>1.608.650</h2>
                 <p>Personas migrantes viven en Chile.<br>(Censo 2024)</p>
-
                 <img src="grafico.png" alt="Gráfico migración" class="grafico">
             </div>
 
@@ -237,7 +300,7 @@
         </div>
     </section>
 
-    <!-- UBICACION / CONTACTO -->
+    <!-- UBICACIÓN / CONTACTO -->
     <section class="contact-showcase" id="donaciones">
 
         <div class="contact-top">
