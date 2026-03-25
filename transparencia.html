@@ -12,21 +12,49 @@
     <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo">
-            <a href="index.html">
+            <a href="index.html" aria-label="Ir al inicio">
                 <img src="sjm.png" alt="SJM Bolivia">
             </a>
         </div>
 
-        <nav class="nav-menu">
-            <a href="index.html">Inicio</a>
-            <a href="quienes-somos.html">Quiénes Somos</a>
-            <a href="publicaciones.html">Publicaciones</a>
-            <a href="proyectos.html">Proyectos</a>
+        <nav class="nav-menu" aria-label="Navegación principal">
+            <a href="index.html" class="nav-main-link">Inicio</a>
+
+            <div class="nav-dropdown has-dropdown">
+                <a href="quienes-somos.html" class="nav-main-link">Quiénes Somos</a>
+                <div class="nav-dropdown-menu">
+                    <a href="quienes-somos.html#mision">Misión</a>
+                    <a href="quienes-somos.html#vision">Visión</a>
+                    <a href="quienes-somos.html#objetivos">Objetivos Estratégicos</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown has-dropdown">
+                <a href="publicaciones.html" class="nav-main-link">Publicaciones</a>
+                <div class="nav-dropdown-menu">
+                    <a href="publicaciones.html#sin-fronteras">Sin Fronteras</a>
+                    <a href="publicaciones.html#el-canto-del-tordo">El Canto del Tordo</a>
+                    <a href="publicaciones.html#notas-informativas">Notas informativas</a>
+                    <a href="publicaciones.html#encuentros-jrf">Encuentros JRF</a>
+                    <a href="publicaciones.html#historias-de-vida">Historias de vida</a>
+                    <a href="publicaciones.html#guia">Guía: Construyendo espacios interculturales</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown has-dropdown">
+                <a href="proyectos.html" class="nav-main-link">Proyectos</a>
+                <div class="nav-dropdown-menu">
+                    <a href="proyectos.html#proyecto-migrantes">Proyecto Migrantes</a>
+                    <a href="proyectos.html#proyecto-emprendimientos">Proyecto Emprendimientos</a>
+                    <a href="proyectos.html#proyecto-jovenes">Proyecto Jóvenes</a>
+                    <a href="proyectos.html#rompiendo-fronteras">Rompiendo Fronteras</a>
+                </div>
+            </div>
         </nav>
 
         <div class="nav-pills">
-            <div class="pill-dropdown">
-                <button class="pill-btn pill-blue dropdown-toggle" type="button">
+            <div class="pill-dropdown has-dropdown">
+                <button class="pill-btn pill-blue dropdown-toggle" type="button" aria-label="Abrir menú de orientación migratoria">
                     Orientación Migratoria <i class="fa-solid fa-caret-down"></i>
                 </button>
 
@@ -50,14 +78,43 @@
     <!-- MENU MOVIL -->
     <div class="mobile-menu-overlay"></div>
 
-    <aside class="mobile-menu">
+    <aside class="mobile-menu" aria-label="Menú móvil">
         <button class="mobile-menu-close" type="button" aria-label="Cerrar menú">&times;</button>
 
         <nav class="mobile-nav-links">
             <a href="index.html">Inicio</a>
-            <a href="quienes-somos.html">Quiénes Somos</a>
-            <a href="publicaciones.html">Publicaciones</a>
-            <a href="proyectos.html">Proyectos</a>
+
+            <div class="mobile-nav-group">
+                <a href="quienes-somos.html">Quiénes Somos</a>
+                <div class="mobile-submenu">
+                    <a href="quienes-somos.html#mision">Misión</a>
+                    <a href="quienes-somos.html#vision">Visión</a>
+                    <a href="quienes-somos.html#objetivos">Objetivos Estratégicos</a>
+                </div>
+            </div>
+
+            <div class="mobile-nav-group">
+                <a href="publicaciones.html">Publicaciones</a>
+                <div class="mobile-submenu">
+                    <a href="publicaciones.html#sin-fronteras">Sin Fronteras</a>
+                    <a href="publicaciones.html#el-canto-del-tordo">El Canto del Tordo</a>
+                    <a href="publicaciones.html#notas-informativas">Notas informativas</a>
+                    <a href="publicaciones.html#encuentros-jrf">Encuentros JRF</a>
+                    <a href="publicaciones.html#historias-de-vida">Historias de vida</a>
+                    <a href="publicaciones.html#guia">Guía: Construyendo espacios interculturales</a>
+                </div>
+            </div>
+
+            <div class="mobile-nav-group">
+                <a href="proyectos.html">Proyectos</a>
+                <div class="mobile-submenu">
+                    <a href="proyectos.html#proyecto-migrantes">Proyecto Migrantes</a>
+                    <a href="proyectos.html#proyecto-emprendimientos">Proyecto Emprendimientos</a>
+                    <a href="proyectos.html#proyecto-jovenes">Proyecto Jóvenes</a>
+                    <a href="proyectos.html#rompiendo-fronteras">Rompiendo Fronteras</a>
+                </div>
+            </div>
+
             <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
             <a href="guias.html">Guías</a>
             <a href="transparencia.html">Transparencia</a>
@@ -66,10 +123,10 @@
 
     <!-- REDES -->
     <div class="social-bar">
-        <a href="#" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" class="social-btn tiktok"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#" class="social-btn youtube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" class="social-btn instagram"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="social-btn facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="social-btn tiktok" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" class="social-btn youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="social-btn instagram" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
     </div>
 
     <!-- HERO TRANSPARENCIA -->
@@ -169,42 +226,34 @@
                             <a href="#">Balance Social 2024</a>
                             <span class="year">2024</span>
                         </div>
-
                         <div class="item right">
                             <a href="#">Balance Social 2023</a>
                             <span class="year">2023</span>
                         </div>
-
                         <div class="item left">
                             <a href="#">Balance Social 2022</a>
                             <span class="year">2022</span>
                         </div>
-
                         <div class="item right">
                             <a href="#">Balance Social 2021</a>
                             <span class="year">2021</span>
                         </div>
-
                         <div class="item left">
                             <a href="#">Balance Social 2020</a>
                             <span class="year">2020</span>
                         </div>
-
                         <div class="item right">
                             <a href="#">Balance Social 2019</a>
                             <span class="year">2019</span>
                         </div>
-
                         <div class="item left">
                             <a href="#">Balance Social 2018</a>
                             <span class="year">2018</span>
                         </div>
-
                         <div class="item right">
                             <a href="#">Balance Social 2017</a>
                             <span class="year">2017</span>
                         </div>
-
                         <div class="item left">
                             <a href="#">Balance Social 2016</a>
                             <span class="year">2016</span>
@@ -228,17 +277,14 @@
                             <a href="#">Estados Financieros 2024</a>
                             <span class="year">2024</span>
                         </div>
-
                         <div class="item right">
                             <a href="#">Estados Financieros 2023</a>
                             <span class="year">2023</span>
                         </div>
-
                         <div class="item left">
                             <a href="#">Estados Financieros 2022</a>
                             <span class="year">2022</span>
                         </div>
-
                         <div class="item right">
                             <a href="#">Estados Financieros 2021</a>
                             <span class="year">2021</span>
@@ -262,17 +308,14 @@
                             <a href="#">Balance Financiero 2024</a>
                             <span class="year">2024</span>
                         </div>
-
                         <div class="item right">
                             <a href="#">Balance Financiero 2023</a>
                             <span class="year">2023</span>
                         </div>
-
                         <div class="item left">
                             <a href="#">Balance Financiero 2022</a>
                             <span class="year">2022</span>
                         </div>
-
                         <div class="item right">
                             <a href="#">Balance Financiero 2021</a>
                             <span class="year">2021</span>
@@ -284,60 +327,44 @@
         </section>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
+    <!-- FOOTER COMPACTO BLANCO -->
+    <footer class="site-footer compact-footer">
         <div class="footer-stripe">
             <span class="stripe-blue"></span>
             <span class="stripe-orange"></span>
             <span class="stripe-red"></span>
         </div>
 
-        <div class="footer-main">
-            <div class="footer-brand">
+        <div class="footer-main footer-main-compact">
+            <div class="footer-brand compact-brand">
                 <div class="footer-logo-box">
                     <img src="sjm.png" alt="SJM Bolivia">
                 </div>
-                <p>
-                    El Servicio Jesuita a Migrantes en Bolivia acompaña, orienta y promueve la dignidad
-                    de las personas migrantes mediante acciones de acogida, protección e integración.
-                </p>
+                <div class="footer-brand-text">
+                    <p>
+                        El Servicio Jesuita a Migrantes en Bolivia acompaña, orienta y promueve
+                        la dignidad de las personas migrantes mediante acciones de acogida,
+                        protección e integración.
+                    </p>
+                </div>
             </div>
 
-            <div class="footer-links-wrap">
-                <div class="footer-column">
-                    <h3>Navegación</h3>
-                    <a href="index.html">Inicio</a>
-                    <a href="quienes-somos.html">Quiénes Somos</a>
-                    <a href="publicaciones.html">Publicaciones</a>
-                    <a href="proyectos.html">Proyectos</a>
-                </div>
+            <div class="footer-contact compact-contact">
+                <h3>Contacto</h3>
+                <a href="mailto:lapaz@sjmbolivia.org">lapaz@sjmbolivia.org</a>
+                <a href="mailto:elalto@sjmbolivia.org">elalto@sjmbolivia.org</a>
+                <a href="transparencia.html">Transparencia</a>
 
-                <div class="footer-column">
-                    <h3>Orientación y recursos</h3>
-                    <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
-                    <a href="guias.html">Guías</a>
-                    <a href="#">Informe sobre movilidad humana 2026</a>
-                    <a href="#">Boletín institucional</a>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Contacto</h3>
-                    <a href="mailto:lapaz@sjmbolivia.org">lapaz@sjmbolivia.org</a>
-                    <a href="mailto:elalto@sjmbolivia.org">elalto@sjmbolivia.org</a>
-                    <a href="transparencia.html">Transparencia</a>
-
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </div>
 
-        <div class="footer-bottom">
+        <div class="footer-bottom compact-bottom">
             <p>© Servicio Jesuita a Migrantes Bolivia</p>
             <div class="footer-bottom-links">
                 <a href="#">Política de privacidad</a>

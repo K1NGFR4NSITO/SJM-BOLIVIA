@@ -138,3 +138,41 @@ if (dropdownToggle && pillDropdown) {
         }
     });
 }
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const markers = document.querySelectorAll(".marker-btn");
+    const popup = document.getElementById("mapPopup");
+    const popupLink = document.getElementById("mapPopupLink");
+    const map = document.querySelector(".map-interactive");
+
+    if (markers.length && popup && popupLink && map) {
+        markers.forEach(marker => {
+            marker.addEventListener("click", (e) => {
+                e.stopPropagation();
+
+                const country = marker.dataset.country;
+                const url = marker.dataset.url;
+
+                popupLink.textContent = country;
+                popupLink.href = url;
+
+                const markerBox = marker.getBoundingClientRect();
+                const mapBox = map.getBoundingClientRect();
+
+                popup.style.left = `${markerBox.left - mapBox.left + 18}px`;
+                popup.style.top = `${markerBox.top - mapBox.top - 8}px`;
+
+                popup.classList.add("show");
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!popup.contains(e.target)) {
+                popup.classList.remove("show");
+            }
+        });
+    }
+});

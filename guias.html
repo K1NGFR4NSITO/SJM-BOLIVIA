@@ -9,6 +9,7 @@
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo">
             <a href="index.html" aria-label="Ir al inicio">
@@ -17,14 +18,42 @@
         </div>
 
         <nav class="nav-menu" aria-label="Navegación principal">
-            <a href="index.html">Inicio</a>
-            <a href="quienes-somos.html">Quiénes Somos</a>
-            <a href="publicaciones.html">Publicaciones</a>
-            <a href="proyectos.html">Proyectos</a>
+            <a href="index.html" class="nav-main-link">Inicio</a>
+
+            <div class="nav-dropdown has-dropdown">
+                <a href="quienes-somos.html" class="nav-main-link">Quiénes Somos</a>
+                <div class="nav-dropdown-menu">
+                    <a href="quienes-somos.html#mision">Misión</a>
+                    <a href="quienes-somos.html#vision">Visión</a>
+                    <a href="quienes-somos.html#objetivos">Objetivos Estratégicos</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown has-dropdown">
+                <a href="publicaciones.html" class="nav-main-link">Publicaciones</a>
+                <div class="nav-dropdown-menu">
+                    <a href="publicaciones.html#sin-fronteras">Sin Fronteras</a>
+                    <a href="publicaciones.html#el-canto-del-tordo">El Canto del Tordo</a>
+                    <a href="publicaciones.html#notas-informativas">Notas informativas</a>
+                    <a href="publicaciones.html#encuentros-jrf">Encuentros JRF</a>
+                    <a href="publicaciones.html#historias-de-vida">Historias de vida</a>
+                    <a href="publicaciones.html#guia">Guía: Construyendo espacios interculturales</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown has-dropdown">
+                <a href="proyectos.html" class="nav-main-link">Proyectos</a>
+                <div class="nav-dropdown-menu">
+                    <a href="proyectos.html#proyecto-migrantes">Proyecto Migrantes</a>
+                    <a href="proyectos.html#proyecto-emprendimientos">Proyecto Emprendimientos</a>
+                    <a href="proyectos.html#proyecto-jovenes">Proyecto Jóvenes</a>
+                    <a href="proyectos.html#rompiendo-fronteras">Rompiendo Fronteras</a>
+                </div>
+            </div>
         </nav>
 
         <div class="nav-pills">
-            <div class="pill-dropdown">
+            <div class="pill-dropdown has-dropdown">
                 <button class="pill-btn pill-blue dropdown-toggle" type="button" aria-label="Abrir menú de orientación migratoria">
                     Orientación Migratoria <i class="fa-solid fa-caret-down"></i>
                 </button>
@@ -53,9 +82,38 @@
 
         <nav class="mobile-nav-links">
             <a href="index.html">Inicio</a>
-            <a href="quienes-somos.html">Quiénes Somos</a>
-            <a href="publicaciones.html">Publicaciones</a>
-            <a href="proyectos.html">Proyectos</a>
+
+            <div class="mobile-nav-group">
+                <a href="quienes-somos.html">Quiénes Somos</a>
+                <div class="mobile-submenu">
+                    <a href="quienes-somos.html#mision">Misión</a>
+                    <a href="quienes-somos.html#vision">Visión</a>
+                    <a href="quienes-somos.html#objetivos">Objetivos Estratégicos</a>
+                </div>
+            </div>
+
+            <div class="mobile-nav-group">
+                <a href="publicaciones.html">Publicaciones</a>
+                <div class="mobile-submenu">
+                    <a href="publicaciones.html#sin-fronteras">Sin Fronteras</a>
+                    <a href="publicaciones.html#el-canto-del-tordo">El Canto del Tordo</a>
+                    <a href="publicaciones.html#notas-informativas">Notas informativas</a>
+                    <a href="publicaciones.html#encuentros-jrf">Encuentros JRF</a>
+                    <a href="publicaciones.html#historias-de-vida">Historias de vida</a>
+                    <a href="publicaciones.html#guia">Guía: Construyendo espacios interculturales</a>
+                </div>
+            </div>
+
+            <div class="mobile-nav-group">
+                <a href="proyectos.html">Proyectos</a>
+                <div class="mobile-submenu">
+                    <a href="proyectos.html#proyecto-migrantes">Proyecto Migrantes</a>
+                    <a href="proyectos.html#proyecto-emprendimientos">Proyecto Emprendimientos</a>
+                    <a href="proyectos.html#proyecto-jovenes">Proyecto Jóvenes</a>
+                    <a href="proyectos.html#rompiendo-fronteras">Rompiendo Fronteras</a>
+                </div>
+            </div>
+
             <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
             <a href="guias.html">Guías</a>
             <a href="transparencia.html">Transparencia</a>
@@ -95,9 +153,7 @@
                     </div>
 
                     <div class="guide-actions">
-                        <a href="Triptico - Tips Zona Migrante.pdf" class="guide-btn download" target="_blank">
-                            Ver
-                        </a>
+                        <a href="Triptico - Tips Zona Migrante.pdf" class="guide-btn download" target="_blank">Ver</a>
                     </div>
                 </div>
 
@@ -111,9 +167,7 @@
                     </div>
 
                     <div class="guide-actions">
-                        <a href="Guía Fronteras Seguras.pdf" class="guide-btn download" target="_blank">
-                            Ver
-                        </a>
+                        <a href="Guía Fronteras Seguras.pdf" class="guide-btn download" target="_blank">Ver</a>
                     </div>
                 </div>
             </div>
@@ -131,13 +185,8 @@
                     </div>
 
                     <div class="guide-actions">
-                        <a href="guia-derechos-migrantes.pdf" target="_blank" class="guide-btn">
-                            Ver
-                        </a>
-
-                        <a href="guia-derechos-migrantes.pdf" class="guide-btn download" download>
-                            Descargar
-                        </a>
+                        <a href="guia-derechos-migrantes.pdf" target="_blank" class="guide-btn">Ver</a>
+                        <a href="guia-derechos-migrantes.pdf" class="guide-btn download" download>Descargar</a>
                     </div>
                 </div>
 
@@ -151,13 +200,8 @@
                     </div>
 
                     <div class="guide-actions">
-                        <a href="guia-proteccion-orientacion.pdf" target="_blank" class="guide-btn">
-                            Ver
-                        </a>
-
-                        <a href="guia-proteccion-orientacion.pdf" class="guide-btn download" download>
-                            Descargar
-                        </a>
+                        <a href="guia-proteccion-orientacion.pdf" target="_blank" class="guide-btn">Ver</a>
+                        <a href="guia-proteccion-orientacion.pdf" class="guide-btn download" download>Descargar</a>
                     </div>
                 </div>
             </div>
@@ -175,13 +219,8 @@
                     </div>
 
                     <div class="guide-actions">
-                        <a href="cartilla-servicios-apoyo.pdf" target="_blank" class="guide-btn">
-                            Ver
-                        </a>
-
-                        <a href="cartilla-servicios-apoyo.pdf" class="guide-btn download" download>
-                            Descargar
-                        </a>
+                        <a href="cartilla-servicios-apoyo.pdf" target="_blank" class="guide-btn">Ver</a>
+                        <a href="cartilla-servicios-apoyo.pdf" class="guide-btn download" download>Descargar</a>
                     </div>
                 </div>
             </div>
@@ -190,43 +229,29 @@
 
     </main>
 
-
-<footer class="site-footer">
-    <div class="footer-stripe">
-        <span class="stripe-blue"></span>
-        <span class="stripe-orange"></span>
-        <span class="stripe-red"></span>
-    </div>
-
-    <div class="footer-main">
-        <div class="footer-brand">
-            <div class="footer-logo-box">
-                <img src="sjm.png" alt="SJM Bolivia">
-            </div>
-            <p>
-                El Servicio Jesuita a Migrantes en Bolivia acompaña, orienta y promueve la dignidad
-                de las personas migrantes mediante acciones de acogida, protección e integración.
-            </p>
+    <!-- FOOTER COMPACTO BLANCO -->
+    <footer class="site-footer compact-footer">
+        <div class="footer-stripe">
+            <span class="stripe-blue"></span>
+            <span class="stripe-orange"></span>
+            <span class="stripe-red"></span>
         </div>
 
-        <div class="footer-links-wrap">
-            <div class="footer-column">
-                <h3>Navegación</h3>
-                <a href="index.html">Inicio</a>
-                <a href="quienes-somos.html">Quiénes Somos</a>
-                <a href="publicaciones.html">Publicaciones</a>
-                <a href="proyectos.html">Proyectos</a>
+        <div class="footer-main footer-main-compact">
+            <div class="footer-brand compact-brand">
+                <div class="footer-logo-box">
+                    <img src="sjm.png" alt="SJM Bolivia">
+                </div>
+                <div class="footer-brand-text">
+                    <p>
+                        El Servicio Jesuita a Migrantes en Bolivia acompaña, orienta y promueve
+                        la dignidad de las personas migrantes mediante acciones de acogida,
+                        protección e integración.
+                    </p>
+                </div>
             </div>
 
-            <div class="footer-column">
-                <h3>Orientación y recursos</h3>
-                <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
-                <a href="guias.html">Guías</a>
-                <a href="#">Informe sobre movilidad humana 2026</a>
-                <a href="#">Boletín institucional</a>
-            </div>
-
-            <div class="footer-column">
+            <div class="footer-contact compact-contact">
                 <h3>Contacto</h3>
                 <a href="mailto:lapaz@sjmbolivia.org">lapaz@sjmbolivia.org</a>
                 <a href="mailto:elalto@sjmbolivia.org">elalto@sjmbolivia.org</a>
@@ -234,25 +259,21 @@
 
                 <div class="footer-social">
                     <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                     <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        <p>© Servicio Jesuita a Migrantes Bolivia</p>
-        <div class="footer-bottom-links">
-            <a href="#">Política de privacidad</a>
-            <a href="transparencia.html">Transparencia</a>
+        <div class="footer-bottom compact-bottom">
+            <p>© Servicio Jesuita a Migrantes Bolivia</p>
+            <div class="footer-bottom-links">
+                <a href="#">Política de privacidad</a>
+                <a href="transparencia.html">Transparencia</a>
+            </div>
         </div>
-    </div>
-</footer>
-
-
+    </footer>
 
     <script src="script.js"></script>
     <script src="guias.js"></script>
