@@ -32,14 +32,46 @@ if (carousel && slides && slideItems.length > 0 && dotsContainer) {
 
     const dots = document.querySelectorAll(".carousel-dots span");
 
+    function resetSlideAnimation() {
+        slideItems.forEach((slide) => {
+            slide.classList.remove("active");
+
+            const line = slide.querySelector(".title-line");
+            const title = slide.querySelector(".slide-text h1");
+            const text = slide.querySelector(".slide-text p");
+
+            if (line) line.style.animation = "none";
+            if (title) title.style.animation = "none";
+            if (text) text.style.animation = "none";
+        });
+    }
+
+    function activateSlideAnimation(currentSlide) {
+        if (!currentSlide) return;
+
+        void currentSlide.offsetWidth;
+
+        const line = currentSlide.querySelector(".title-line");
+        const title = currentSlide.querySelector(".slide-text h1");
+        const text = currentSlide.querySelector(".slide-text p");
+
+        if (line) line.style.animation = "";
+        if (title) title.style.animation = "";
+        if (text) text.style.animation = "";
+
+        currentSlide.classList.add("active");
+    }
+
     function updateCarousel() {
-        const slideWidth = carousel.clientWidth;
-        slides.style.transform = `translateX(-${index * slideWidth}px)`;
+        slides.style.transform = `translateX(-${index * 100}%)`;
 
         dots.forEach(dot => dot.classList.remove("active"));
         if (dots[index]) {
             dots[index].classList.add("active");
         }
+
+        resetSlideAnimation();
+        activateSlideAnimation(slideItems[index]);
     }
 
     if (rightArrow) {
@@ -83,6 +115,44 @@ if (carousel && slides && slideItems.length > 0 && dotsContainer) {
     window.addEventListener("resize", updateCarousel);
     window.addEventListener("orientationchange", updateCarousel);
 
+    carousel.addEventListener("mouseenter", () => {
+        clearInterval(autoPlay);
+    });
+
+    carousel.addEventListener("mouseleave", () => {
+        startAutoplay();
+    });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slides.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+    });
+
+    slides.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                index++;
+                if (index >= totalSlides) {
+                    index = 0;
+                }
+            } else {
+                index--;
+                if (index < 0) {
+                    index = totalSlides - 1;
+                }
+            }
+
+            updateCarousel();
+            restartAutoplay();
+        }
+    });
+
+    updateCarousel();
     startAutoplay();
 }
 
@@ -139,8 +209,7 @@ if (dropdownToggle && pillDropdown) {
     });
 }
 
-
-
+/* ========= POPUP DEL MAPA ========= */
 
 document.addEventListener("DOMContentLoaded", () => {
     const markers = document.querySelectorAll(".marker-btn");
@@ -175,4 +244,99 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+});
+
+/* ========= MODAL DE PROYECTOS ========= */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const projectsData = {
+        jovenes: {
+            support: "Apoyado por: KINDERMISSIONWERK, ALEMANIA",
+            title: "Jóvenes Rompiendo Fronteras. Promoviendo cultura de hospitalidad con enfoque intercultural y migratorio – El Alto / Bolivia",
+            body: `
+                <p>
+                    El proyecto “Jóvenes Rompiendo Fronteras” promueve la construcción de una cultura de hospitalidad e interculturalidad en la ciudad de El Alto mediante procesos formativos dirigidos a adolescentes y jóvenes en situación de vulnerabilidad, fortaleciendo el reconocimiento de su identidad cultural y sus capacidades de convivencia en contextos diversos.
+                </p>
+                <p>
+                    A través de formación progresiva, experiencias vivenciales e incidencia social, los participantes se convierten en protagonistas de encuentros interculturales y acciones de sensibilización, mientras el proyecto impulsa la organización juvenil, la producción de contenidos comunicacionales y el fortalecimiento institucional, consolidando a los jóvenes como actores clave en la construcción de relaciones basadas en la dignidad, la diversidad y la inclusión.
+                </p>
+            `
+        },
+
+        acompanamiento: {
+            support: "Apoyado por: JESUITEN WELTWEIT, ALEMANIA",
+            title: "Acompañamiento integral y visibilización de la migración forzada con enfoque intercultural (2024 – 2025)",
+            body: `
+                <p>
+                    El proyecto “Acompañamiento integral y visibilización de la migración forzada” busca reducir la vulnerabilidad de las personas migrantes en Bolivia mediante una intervención integral basada en los principios de acoger, proteger, promover e integrar, brindando atención humanitaria, apoyo psicosocial, asesoramiento legal y oportunidades de integración sociocultural que garantizan el acceso a derechos y condiciones dignas.
+                </p>
+                <p>
+                    Paralelamente, impulsa procesos de convivencia intercultural, visibilización del fenómeno migratorio y monitoreo de fronteras, contribuyendo a la sensibilización social, la generación de información y la incidencia pública, posicionando al SJM como un actor clave en la protección y promoción de los derechos de las personas migrantes.
+                </p>
+            `
+        },
+
+        emprendimiento: {
+            support: "Apoyado por: Desarrollo y Paz – Caritas Canadá",
+            title: "Propuesta metodológica para el apoyo a Emprendimientos con población vulnerable a partir de la evaluación de experiencias de emprendimiento con migrantes forzados residentes en Bolivia",
+            body: `
+                <p>
+                    El proyecto piloto “Propuesta metodológica para el apoyo a Emprendimientos con población vulnerable” tiene como finalidad fortalecer la inclusión económica de personas migrantes mediante un proceso integral que inicia con un diagnóstico basado en la evaluación social sistémica, continúa con la formación en áreas productivas y gestión empresarial, y se concreta en la implementación y acompañamiento de emprendimientos piloto.
+                </p>
+                <p>
+                    A partir de la evaluación participativa de estas experiencias, se identifican buenas prácticas que permiten diseñar una metodología institucional replicable, orientada a promover la sostenibilidad de los emprendimientos y la autonomía económica de las poblaciones migrantes en contextos de vulnerabilidad.
+                </p>
+            `
+        }
+    };
+
+    const modal = document.getElementById("projectModal");
+    const modalClose = document.getElementById("projectModalClose");
+    const modalTitle = document.getElementById("projectModalTitle");
+    const modalSupport = document.getElementById("projectModalSupport");
+    const modalBody = document.getElementById("projectModalBody");
+    const modalBackdrop = document.querySelector(".project-modal-backdrop");
+    const triggers = document.querySelectorAll(".project-capsule");
+
+    if (!modal || !modalClose || !modalTitle || !modalSupport || !modalBody || !triggers.length) {
+        return;
+    }
+
+    function openProjectModal(projectKey) {
+        const project = projectsData[projectKey];
+        if (!project) return;
+
+        modalSupport.textContent = project.support;
+        modalTitle.textContent = project.title;
+        modalBody.innerHTML = project.body;
+
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeProjectModal() {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    }
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener("click", () => {
+            const projectKey = trigger.dataset.project;
+            openProjectModal(projectKey);
+        });
+    });
+
+    modalClose.addEventListener("click", closeProjectModal);
+
+    if (modalBackdrop) {
+        modalBackdrop.addEventListener("click", closeProjectModal);
+    }
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("active")) {
+            closeProjectModal();
+        }
+    });
 });

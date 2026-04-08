@@ -43,10 +43,9 @@
             <div class="nav-dropdown has-dropdown">
                 <a href="proyectos.html" class="nav-main-link active">Proyectos</a>
                 <div class="nav-dropdown-menu">
-                    <a href="proyectos.html#proyecto-migrantes">Proyecto Migrantes</a>
-                    <a href="proyectos.html#proyecto-emprendimientos">Proyecto Emprendimientos</a>
-                    <a href="proyectos.html#proyecto-jovenes">Proyecto Jóvenes</a>
-                    <a href="proyectos.html#rompiendo-fronteras">Rompiendo Fronteras</a>
+                    <a href="#proyecto-jovenes-fronteras">Jóvenes Rompiendo Fronteras</a>
+                    <a href="#proyecto-acompanamiento">Acompañamiento integral</a>
+                    <a href="#proyecto-emprendimiento-piloto">Proyecto piloto de emprendimientos</a>
                 </div>
             </div>
         </nav>
@@ -106,10 +105,9 @@
             <div class="mobile-nav-group">
                 <a href="proyectos.html">Proyectos</a>
                 <div class="mobile-submenu">
-                    <a href="proyectos.html#proyecto-migrantes">Proyecto Migrantes</a>
-                    <a href="proyectos.html#proyecto-emprendimientos">Proyecto Emprendimientos</a>
-                    <a href="proyectos.html#proyecto-jovenes">Proyecto Jóvenes</a>
-                    <a href="proyectos.html#rompiendo-fronteras">Rompiendo Fronteras</a>
+                    <a href="#proyecto-jovenes-fronteras">Jóvenes Rompiendo Fronteras</a>
+                    <a href="#proyecto-acompanamiento">Acompañamiento integral</a>
+                    <a href="#proyecto-emprendimiento-piloto">Proyecto piloto de emprendimientos</a>
                 </div>
             </div>
 
@@ -129,57 +127,77 @@
         </div>
     </section>
 
-    <section class="proyectos-grid">
+    <section class="proyectos-list">
 
-        <a href="#" class="project-card" id="proyecto-migrantes">
-            <img src="img/proyecto1.jpg" alt="Proyecto Migrantes">
-            <div class="project-overlay"></div>
-            <div class="project-content">
-                <h2>Proyecto Migrantes</h2>
-                <p>
-                    Iniciativa orientada a brindar orientación legal, social y acompañamiento
-                    a personas migrantes en situación de vulnerabilidad.
-                </p>
-            </div>
-        </a>
+        <article class="project-block" id="proyecto-jovenes-fronteras">
+            <button
+                class="project-capsule"
+                type="button"
+                data-project="jovenes"
+                aria-label="Ver detalle del proyecto Jóvenes Rompiendo Fronteras">
+                <img src="img/proyecto1.jpg" alt="Jóvenes Rompiendo Fronteras">
+                <span class="project-capsule-overlay"></span>
 
-        <a href="#" class="project-card" id="proyecto-emprendimientos">
-            <img src="img/proyecto2.jpg" alt="Proyecto Emprendimientos">
-            <div class="project-overlay"></div>
-            <div class="project-content">
-                <h2>Proyecto Emprendimientos</h2>
-                <p>
-                    Procesos orientados a fortalecer capacidades, iniciativas productivas
-                    y medios de vida de población migrante y sus familias.
-                </p>
-            </div>
-        </a>
+                <span class="project-capsule-inner">
+                    <span class="project-capsule-title">
+                        Proyecto: Jóvenes Rompiendo Fronteras. Promoviendo cultura de hospitalidad con enfoque intercultural y migratorio – El Alto / Bolivia
+                    </span>
+                    <span class="project-capsule-label">Ver proyecto</span>
+                </span>
+            </button>
+        </article>
 
-        <a href="#" class="project-card" id="proyecto-jovenes">
-            <img src="img/proyecto3.jpg" alt="Proyecto Jóvenes">
-            <div class="project-overlay"></div>
-            <div class="project-content">
-                <h2>Proyecto Jóvenes</h2>
-                <p>
-                    Espacios de formación y participación para juventudes, promoviendo
-                    convivencia intercultural, liderazgo y compromiso social.
-                </p>
-            </div>
-        </a>
+        <article class="project-block" id="proyecto-acompanamiento">
+            <button
+                class="project-capsule"
+                type="button"
+                data-project="acompanamiento"
+                aria-label="Ver detalle del proyecto de acompañamiento integral">
+                <img src="img/proyecto2.jpg" alt="Acompañamiento integral y visibilización de la migración forzada">
+                <span class="project-capsule-overlay"></span>
 
-        <a href="#" class="project-card" id="rompiendo-fronteras">
-            <img src="img/proyecto4.jpg" alt="Rompiendo Fronteras">
-            <div class="project-overlay"></div>
-            <div class="project-content">
-                <h2>Rompiendo Fronteras</h2>
-                <p>
-                    Acciones orientadas a fortalecer redes de acogida, integración
-                    y apoyo comunitario frente a los desafíos de la movilidad humana.
-                </p>
-            </div>
-        </a>
+                <span class="project-capsule-inner">
+                    <span class="project-capsule-title">
+                        Proyecto: Acompañamiento integral y visibilización de la migración forzada con enfoque intercultural (2024 – 2025)
+                    </span>
+                    <span class="project-capsule-label">Ver proyecto</span>
+                </span>
+            </button>
+        </article>
+
+        <article class="project-block" id="proyecto-emprendimiento-piloto">
+            <button
+                class="project-capsule"
+                type="button"
+                data-project="emprendimiento"
+                aria-label="Ver detalle del proyecto piloto de emprendimientos">
+                <img src="img/proyecto3.jpg" alt="Proyecto piloto de emprendimientos">
+                <span class="project-capsule-overlay"></span>
+
+                <span class="project-capsule-inner">
+                    <span class="project-capsule-title">
+                        Proyecto piloto: Propuesta metodológica para el apoyo a Emprendimientos con población vulnerable a partir de la evaluación de experiencias de emprendimiento con migrantes forzados residentes en Bolivia
+                    </span>
+                    <span class="project-capsule-label">Ver proyecto</span>
+                </span>
+            </button>
+        </article>
 
     </section>
+
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+        <div class="project-modal-backdrop"></div>
+
+        <div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+            <button class="project-modal-close" id="projectModalClose" type="button" aria-label="Cerrar">&times;</button>
+
+            <div class="project-modal-scroll">
+                <p class="project-modal-kicker" id="projectModalSupport"></p>
+                <h2 class="project-modal-title" id="projectModalTitle"></h2>
+                <div class="project-modal-body" id="projectModalBody"></div>
+            </div>
+        </div>
+    </div>
 
     <footer class="site-footer compact-footer">
         <div class="footer-stripe">
