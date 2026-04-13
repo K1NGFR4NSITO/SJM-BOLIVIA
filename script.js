@@ -103,7 +103,7 @@ if (carousel && slides && slideItems.length > 0 && dotsContainer) {
                 index = 0;
             }
             updateCarousel();
-        }, 6000);
+        }, 20000);
     }
 
     function restartAutoplay() {
