@@ -600,8 +600,22 @@ section{
 
 .info-section{
     width:100%;
-    padding:80px 60px;
+    padding:95px 60px 80px;
     background:#f6f7f9;
+}
+
+.areas-header{
+    width:min(1200px, 100%);
+    margin:0 auto 42px;
+    text-align:center;
+}
+
+.areas-header h2{
+    font-size:52px;
+    font-weight:800;
+    color:#111;
+    line-height:1.05;
+    margin:0;
 }
 
 .info-top-grid{
@@ -1338,6 +1352,18 @@ section{
         max-width:100%;
     }
 
+    .info-section{
+        padding:70px 30px 70px;
+    }
+
+    .areas-header{
+        margin:0 auto 34px;
+    }
+
+    .areas-header h2{
+        font-size:42px;
+    }
+
     .info-top-grid{
         grid-template-columns:1fr;
     }
@@ -1606,7 +1632,16 @@ section{
     }
 
     .info-section{
-        padding:60px 20px;
+        padding:70px 20px 60px;
+    }
+
+    .areas-header{
+        margin:0 auto 28px;
+        text-align:center;
+    }
+
+    .areas-header h2{
+        font-size:34px;
     }
 
     .info-top-card{
@@ -1876,7 +1911,16 @@ section{
     }
 
     .info-section{
-        padding:50px 14px;
+        padding:58px 14px 50px;
+    }
+
+    .areas-header{
+        margin:0 auto 22px;
+        text-align:center;
+    }
+
+    .areas-header h2{
+        font-size:28px;
     }
 
     .info-top-card{
