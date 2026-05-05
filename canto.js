@@ -2,7 +2,7 @@ const publicaciones = [
   {
     titulo: "Acompañar en movimiento: aprendizajes que transforman la mirada sobre migración",
     fecha: "16 abril 2026",
-    resumen: "En esta nueva edición de “El Canto del Tordo”, se propone una reflexión que trasciende la descripción de acciones para situarse en el terreno del aprendizaje institucional y la comprensión crítica de la movilidad humana. ",
+    resumen: "En esta nueva edición de “El Canto del Tordo”, se propone una reflexión que trasciende la descripción de acciones para situarse en el terreno del aprendizaje institucional y la comprensión crítica de la movilidad humana.",
     imagen: "canto.jpeg",
     pdf: "pdf/ElCantoDelTordo-Edicion-2.pdf",
     categoria: "Nota informativa"
@@ -33,103 +33,192 @@ const publicaciones = [
   }
 ];
 
-const notaPrincipal = document.getElementById("notaPrincipal");
-const notasSecundarias = document.getElementById("notasSecundarias");
-const archivoGrid = document.getElementById("archivoGrid");
+document.addEventListener("DOMContentLoaded", () => {
+  const notaPrincipal = document.getElementById("notaPrincipal");
+  const notasSecundarias = document.getElementById("notasSecundarias");
+  const archivoGrid = document.getElementById("archivoGrid");
 
-function renderPublicaciones() {
-  if (!publicaciones.length) return;
+  const modal = document.getElementById("pdfViewerModal");
+  const frame = document.getElementById("pdfFrame");
+  const title = document.getElementById("pdfViewerTitle");
+  const downloadBtn = document.getElementById("pdfDownloadBtn");
+  const closeBtn = document.getElementById("pdfCloseBtn");
 
-  const ultima = publicaciones[0];
-  const anteriores = publicaciones.slice(1);
+  let pdfAbierto = false;
+  let bloqueoHistorial = false;
 
-  notaPrincipal.innerHTML = `
-    <a href="${ultima.pdf}" target="_blank">
-      <img src="${ultima.imagen}" alt="${ultima.titulo}" class="nota-principal-img">
+  function textoSeguro(texto = "") {
+    return String(texto).trim();
+  }
+
+  function crearImagen(src, alt, clase = "") {
+    return `
+      <img 
+        src="${src}" 
+        alt="${textoSeguro(alt)}" 
+        class="${clase}" 
+        loading="lazy"
+      >
+    `;
+  }
+
+  function crearLinkPDF(nota, contenido) {
+    return `
+      <a 
+        href="${nota.pdf}" 
+        data-pdf="${nota.pdf}" 
+        data-title="${textoSeguro(nota.titulo)}"
+        aria-label="Abrir publicación: ${textoSeguro(nota.titulo)}"
+      >
+        ${contenido}
+      </a>
+    `;
+  }
+
+  function renderPublicaciones() {
+    if (!publicaciones.length || !notaPrincipal || !notasSecundarias || !archivoGrid) return;
+
+    const ultima = publicaciones[0];
+    const anteriores = publicaciones.slice(1);
+
+    notaPrincipal.innerHTML = crearLinkPDF(ultima, `
+      <div class="nota-principal-media">
+        ${crearImagen(ultima.imagen, ultima.titulo, "nota-principal-img")}
+      </div>
+
       <div class="nota-principal-body">
-        <span class="nota-etiqueta">${ultima.categoria}</span>
-        <span class="nota-fecha">${ultima.fecha}</span>
+        <span class="nota-fecha">
+          <i class="fa-regular fa-calendar"></i>
+          ${ultima.fecha}
+        </span>
+
         <h2>${ultima.titulo}</h2>
         <p>${ultima.resumen}</p>
+
         <span class="nota-link">
-          Ver PDF <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          Leer publicación
+          <i class="fa-solid fa-arrow-right"></i>
         </span>
       </div>
-    </a>
-  `;
+    `);
 
-  notasSecundarias.innerHTML = anteriores.map(nota => `
-    <article class="nota-side">
-      <a href="${nota.pdf}" target="_blank">
-        <img src="${nota.imagen}" alt="${nota.titulo}">
-        <div class="nota-side-content">
-          <span class="nota-fecha">${nota.fecha}</span>
-          <h3>${nota.titulo}</h3>
-          <p>${nota.resumen}</p>
-        </div>
-      </a>
-    </article>
-  `).join("");
+    notasSecundarias.innerHTML = anteriores.map((nota, index) => `
+      <article class="nota-side" style="--delay:${index * 0.08}s">
+        ${crearLinkPDF(nota, `
+          <div class="nota-side-img">
+            ${crearImagen(nota.imagen, nota.titulo)}
+          </div>
 
-  archivoGrid.innerHTML = publicaciones.map(nota => `
-    <article class="archivo-card">
-      <a href="${nota.pdf}" target="_blank">
-        <img src="${nota.imagen}" alt="${nota.titulo}">
-        <div class="archivo-card-body">
-          <span class="nota-fecha">${nota.fecha}</span>
-          <h3>${nota.titulo}</h3>
-          <p>${nota.resumen}</p>
-          <span class="nota-link">
-            Abrir PDF <i class="fa-solid fa-file-pdf"></i>
-          </span>
-        </div>
-      </a>
-    </article>
-  `).join("");
-}
+          <div class="nota-side-content">
+            <span class="nota-fecha">
+              <i class="fa-regular fa-calendar"></i>
+              ${nota.fecha}
+            </span>
 
-renderPublicaciones();
+            <h3>${nota.titulo}</h3>
+            <p>${nota.resumen}</p>
 
-document.addEventListener("click", function(e){
-    const link = e.target.closest("a");
+            <span class="mini-link">
+              Ver nota <i class="fa-solid fa-angle-right"></i>
+            </span>
+          </div>
+        `)}
+      </article>
+    `).join("");
 
+    archivoGrid.innerHTML = publicaciones.map((nota, index) => `
+      <article class="archivo-card" style="--delay:${index * 0.07}s">
+        ${crearLinkPDF(nota, `
+          <div class="archivo-img-wrap">
+            ${crearImagen(nota.imagen, nota.titulo)}
+          </div>
+
+          <div class="archivo-card-body">
+            <span class="nota-fecha">
+              <i class="fa-regular fa-calendar"></i>
+              ${nota.fecha}
+            </span>
+
+            <h3>${nota.titulo}</h3>
+            <p>${nota.resumen}</p>
+
+            <span class="nota-link">
+              Abrir PDF <i class="fa-solid fa-file-pdf"></i>
+            </span>
+          </div>
+        `)}
+      </article>
+    `).join("");
+  }
+
+  function abrirPDF(pdfUrl, pdfTitulo) {
+    if (!modal || !frame || !title || !downloadBtn) return;
+
+    title.textContent = "El Canto del Tordo";
+    frame.src = pdfUrl;
+    downloadBtn.href = pdfUrl;
+
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("pdf-open");
+
+    pdfAbierto = true;
+    bloqueoHistorial = true;
+
+    history.pushState({ visorPDF: true }, "", window.location.href);
+
+    setTimeout(() => {
+      bloqueoHistorial = false;
+    }, 150);
+  }
+
+  function cerrarPDF(desdeHistorial = false) {
+    if (!modal || !frame || !pdfAbierto) return;
+
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("pdf-open");
+
+    setTimeout(() => {
+      frame.src = "";
+    }, 200);
+
+    pdfAbierto = false;
+
+    if (!desdeHistorial && history.state?.visorPDF) {
+      history.back();
+    }
+  }
+
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a[data-pdf]");
     if (!link) return;
-
-    const href = link.getAttribute("href");
-
-    if (!href || !href.toLowerCase().includes(".pdf")) return;
 
     e.preventDefault();
 
-    const modal = document.getElementById("pdfViewerModal");
-    const frame = document.getElementById("pdfFrame");
-    const title = document.getElementById("pdfViewerTitle");
-    const downloadBtn = document.getElementById("pdfDownloadBtn");
+    const pdfUrl = link.dataset.pdf;
+    const pdfTitulo = link.dataset.title || "Publicación";
 
-    const cardTitle =
-        link.querySelector("h2")?.textContent ||
-        link.querySelector("h3")?.textContent ||
-        link.closest(".nota-principal, .nota-side, .archivo-card")?.querySelector("h2, h3")?.textContent ||
-        "Nota informativa";
+    abrirPDF(pdfUrl, pdfTitulo);
+  });
 
-    title.textContent = cardTitle;
-    frame.src = href;
-    downloadBtn.href = href;
+  closeBtn?.addEventListener("click", () => {
+    cerrarPDF(false);
+  });
 
-    modal.classList.add("active");
-    document.body.classList.add("pdf-open");
-});
-
-document.addEventListener("DOMContentLoaded", function(){
-    const closeBtn = document.getElementById("pdfCloseBtn");
-    const modal = document.getElementById("pdfViewerModal");
-    const frame = document.getElementById("pdfFrame");
-
-    if (closeBtn) {
-        closeBtn.addEventListener("click", function(){
-            modal.classList.remove("active");
-            document.body.classList.remove("pdf-open");
-            frame.src = "";
-        });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && pdfAbierto) {
+      cerrarPDF(false);
     }
+  });
+
+  window.addEventListener("popstate", () => {
+    if (bloqueoHistorial) return;
+
+    if (pdfAbierto) {
+      cerrarPDF(true);
+    }
+  });
+
+  renderPublicaciones();
 });
