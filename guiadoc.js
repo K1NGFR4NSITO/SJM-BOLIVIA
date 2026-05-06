@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!modal || !frame || !title || !downloadBtn) return;
 
     title.textContent = documento.titulo;
-    frame.src = `${documento.pdf}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`;
-    downloadBtn.href = documento.pdf;
+frame.src = `${documento.pdf}#toolbar=0&navpanes=0&scrollbar=1&view=Fit`;    
+downloadBtn.href = documento.pdf;
 
     modal.classList.add("active");
     modal.setAttribute("aria-hidden", "false");

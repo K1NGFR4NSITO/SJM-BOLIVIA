@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!modal || !frame || !title || !downloadBtn || !pdfUrl) return;
 
     title.textContent = pdfTitulo || "Historias de Vida";
-    frame.src = `${pdfUrl}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`;
+    frame.src = `${pdfUrl}#toolbar=0&navpanes=0&scrollbar=1&view=Fit`;
     downloadBtn.href = pdfUrl;
 
     modal.classList.add("active");

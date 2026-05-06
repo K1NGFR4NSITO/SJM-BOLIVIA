@@ -208,18 +208,56 @@
     </div>
 
         <div class="info-top-grid">
-            <a href="#" class="info-top-card">
-                <img src="sociopastoral.png" alt="Área Socio Pastoral">
-                <div class="info-top-overlay"></div>
-                <h3>ÁREA SOCIO PASTORAL</h3>
-            </a>
 
-            <a href="#" class="info-top-card">
-                <img src="jovenes.jpeg" alt="Área Jóvenes e Interculturalidad">
-                <div class="info-top-overlay"></div>
-                <h3>ÁREA JÓVENES E INTERCULTURALIDAD</h3>
-            </a>
-        </div>
+    <a
+        href="#"
+        class="info-top-card area-trigger"
+        data-area="sociopastoral">
+
+        <img src="sociopastoral.png" alt="Área Socio Pastoral">
+
+        <div class="info-top-overlay"></div>
+
+        <div class="info-top-content">
+
+    <div>
+        <h3>ÁREA SOCIO PASTORAL</h3>
+
+        <p class="info-top-description">
+    Acompañamos a personas migrantes y sus familias mediante acciones sociales, pastorales e interculturales, articulando redes institucionales para reducir su vulnerabilidad y fortalecer su integración.
+</p>
+    </div>
+
+    <span>Ver área</span>
+
+</div>
+
+    </a>
+
+    <a
+    href="#"
+    class="info-top-card area-trigger"
+    data-area="jovenes">
+
+    <img src="jovenes.jpeg" alt="Área Jóvenes e Interculturalidad">
+
+    <div class="info-top-overlay"></div>
+
+    <div class="info-top-content">
+
+        <h3>ÁREA JÓVENES E INTERCULTURALIDAD</h3>
+
+        <p class="info-top-description">
+            Promovemos espacios de formación intercultural, participación juvenil y convivencia entre diversas culturas, fortaleciendo el liderazgo, la hospitalidad y la integración de adolescentes y jóvenes en contextos de movilidad humana.
+        </p>
+
+        <span>Ver área</span>
+
+    </div>
+
+</a>
+
+</div>
 
         <div class="info-grid">
 
@@ -237,12 +275,28 @@
                 </div>
             </div>
 
-            <div class="info-card card-blue">
-                <h3>CIFRAS DE ATENCIÓN</h3>
-                <h2>1.608.650</h2>
-                <p>Personas migrantes viven en Chile.<br>(Censo 2024)</p>
-                <img src="grafico.png" alt="Gráfico migración" class="grafico">
+            <a href="#" class="info-card card-blue stats-trigger" data-stats="cifras">
+    <h3>CIFRAS DE ATENCIÓN</h3>
+
+    <div class="stats-cover">
+        <span class="stats-number">9.545</span>
+        <p>Personas acompañadas entre 2019 y 2026</p>
+
+        <div class="stats-mini-grid">
+            <div>
+                <strong>68%</strong>
+                <span>Adultos</span>
             </div>
+
+            <div>
+                <strong>32%</strong>
+                <span>Menores</span>
+            </div>
+        </div>
+
+        <span class="stats-cover-btn">Ver cifras</span>
+    </div>
+</a>
 
             <div class="info-card card-red">
                 <h3>PERFIL MIGRATORIO (2024 – 2025)</h3>
@@ -321,8 +375,8 @@
                 </div>
                 <h3>Información de contacto:</h3>
                 <p>
-                    Calle Ficticia 123<br>
-                    El Alto - La Paz - Bolivia
+                    Av. De los Héroes N°140 casi esq. 11 de Junio, Zona Ferropetrol<br>
+                    El Alto - Bolivia
                 </p>
             </div>
 
@@ -331,7 +385,7 @@
                     <i class="fa-regular fa-envelope"></i>
                 </div>
                 <h3>Correo electrónico:</h3>
-                <p>contacto@sjmbolivia.org</p>
+                <p>comunicacion.sjmbolivia@gmail.com</p>
             </div>
 
         </div>
@@ -403,9 +457,9 @@
 
             <div class="footer-contact compact-contact">
                 <h3>Contacto</h3>
-                <a href="mailto:lapaz@sjmbolivia.org">lapaz@sjmbolivia.org</a>
-                <a href="mailto:elalto@sjmbolivia.org">elalto@sjmbolivia.org</a>
-                <a href="transparencia.html">Transparencia</a>
+                <!--<a href="mailto:lapaz@sjmbolivia.org">lapaz@sjmbolivia.org</a>-->
+                <a href="mailto:elalto@sjmbolivia.org">comunicacion.sjmbolivia@gmail.com</a>
+                <!--<a href="transparencia.html">Transparencia</a>-->
 
                 <div class="footer-social">
                     <a href="https://www.facebook.com/sjmbolivia/?locale=es_LA" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -420,11 +474,35 @@
             <p>© Servicio Jesuita a Migrantes Bolivia</p>
             <div class="footer-bottom-links">
                 <a href="#">Política de privacidad</a>
-                <a href="transparencia.html">Transparencia</a>
+                <!--<a href="transparencia.html">Transparencia</a>-->
             </div>
         </div>
     </footer>
 
+    <!-- MODAL AREAS -->
+
+<div class="project-modal" id="areaModal" aria-hidden="true">
+
+    <div class="project-modal-backdrop"></div>
+
+    <div class="project-modal-box">
+
+        <button
+            class="project-modal-close"
+            id="areaModalClose"
+            type="button">
+            &times;
+        </button>
+
+        <p class="project-modal-support" id="areaModalSupport"></p>
+
+        <h2 id="areaModalTitle"></h2>
+
+        <div class="project-modal-body" id="areaModalBody"></div>
+
+    </div>
+
+</div>
     <script src="script.js"></script>
 </body>
 </html>
