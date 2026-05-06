@@ -373,81 +373,135 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const areasData = {
         sociopastoral: {
-            support: "Área de acompañamiento y protección",
-            title: "Área Socio Pastoral",
-            body: `
-                <section class="area-detail-section">
-                    <h3>Objetivo del Área</h3>
-                    <p>
-                        Disminuir la vulnerabilidad de las personas migrantes y sus familias mediante la articulación con otras instituciones para el acompañamiento en los flujos migratorios, el fortalecimiento de una presencia intercultural orientada a la formación e información en zonas fronterizas, y el desarrollo de acciones de acompañamiento social y pastoral dirigidas a familias en situación de vulnerabilidad.
-                    </p>
-                </section>
+    title: "Área Socio Pastoral",
+    body: `
+        <section class="area-detail-section">
+            <h3>Objetivo del Área</h3>
 
-                <section class="area-detail-section">
-                    <h3>1. Acompañamiento social para el bienestar y la inclusión</h3>
+            <p>
+                Disminuir la vulnerabilidad de las personas migrantes y sus familias mediante la articulación con otras instituciones para el acompañamiento en los flujos migratorios, el fortalecimiento de una presencia intercultural orientada a la formación e información en zonas fronterizas, y el desarrollo de acciones de acompañamiento social y pastoral dirigidas a familias en situación de vulnerabilidad.
+            </p>
+        </section>
+
+        <section class="area-detail-section">
+            <h3>1. Acompañamiento social para el bienestar y la inclusión</h3>
+
+            <div class="area-detail-grid">
+
+                <div class="area-detail-content">
+
                     <p>
                         Brindamos acompañamiento integral a la población migrante, promoviendo su bienestar y facilitando su proceso de integración social.
                     </p>
 
-                    <div class="area-detail-grid">
-                        <div>
-                            <h4>Servicios:</h4>
-                            <ul>
-                                <li>Acompañamiento y seguimiento en situaciones de salud, mediante la articulación con centros de atención aliados.</li>
-                                <li>Orientación social para la movilidad y adaptación en las ciudades de El Alto y La Paz.</li>
-                                <li>Promoción de la integración social, económica y cultural.</li>
-                            </ul>
-                        </div>
+                    <h4>Servicios:</h4>
 
-                        <img src="area-socio1.png" alt="Acompañamiento social para el bienestar y la inclusión">
-                    </div>
-                </section>
+                    <ul>
+                        <li>
+                            Acompañamiento y seguimiento en situaciones de salud,
+                            mediante la articulación con centros de atención aliados.
+                        </li>
 
-                <section class="area-detail-section">
-                    <h3>2. Orientación legal y migratoria para el acceso a derechos</h3>
+                        <li>
+                            Orientación social para la movilidad y adaptación
+                            en las ciudades de El Alto y La Paz.
+                        </li>
+
+                        <li>
+                            Promoción de la integración social,
+                            económica y cultural.
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="area-detail-image">
+                    <img src="area-socio1.png" alt="Acompañamiento social">
+                </div>
+
+            </div>
+        </section>
+
+        <section class="area-detail-section">
+            <h3>2. Orientación legal y migratoria para el acceso a derechos</h3>
+
+            <div class="area-detail-grid">
+
+                <div class="area-detail-content">
+
                     <p>
-                        Ofrecemos orientación y acompañamiento en temas legales y migratorios, promoviendo el acceso efectivo a derechos y la regularización de la situación migratoria.
+                        Ofrecemos orientación y acompañamiento en temas legales y migratorios,
+                        promoviendo el acceso efectivo a derechos y la regularización de la situación migratoria.
                     </p>
 
-                    <div class="area-detail-grid reverse">
-                        <div>
-                            <h4>Servicios:</h4>
-                            <ul>
-                                <li>Orientación sobre la normativa migratoria vigente.</li>
-                                <li>Asesoramiento legal básico según cada caso.</li>
-                                <li>Acompañamiento en procesos administrativos migratorios.</li>
-                            </ul>
-                        </div>
+                    <h4>Servicios:</h4>
 
-                        <img src="area-socio2.png" alt="Orientación legal y migratoria">
-                    </div>
-                </section>
+                    <ul>
+                        <li>
+                            Orientación sobre la normativa migratoria vigente.
+                        </li>
 
-                <section class="area-detail-section">
-                    <h3>3. Apoyo humanitario en situaciones de vulnerabilidad</h3>
+                        <li>
+                            Asesoramiento legal básico según cada caso.
+                        </li>
+
+                        <li>
+                            Acompañamiento en procesos administrativos migratorios.
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="area-detail-image">
+                    <img src="area-socio2.png" alt="Orientación legal y migratoria">
+                </div>
+
+            </div>
+        </section>
+
+        <section class="area-detail-section">
+            <h3>3. Apoyo humanitario en situaciones de vulnerabilidad</h3>
+
+            <div class="area-detail-grid">
+
+                <div class="area-detail-content">
+
                     <p>
-                        Brindamos asistencia oportuna y digna a personas migrantes en condiciones de vulnerabilidad, garantizando el acceso a servicios básicos.
+                        Brindamos asistencia oportuna y digna a personas migrantes
+                        en condiciones de vulnerabilidad, garantizando el acceso a servicios básicos.
                     </p>
 
-                    <div class="area-detail-grid">
-                        <div>
-                            <h4>Servicios:</h4>
-                            <ul>
-                                <li>Entrega de kits de aseo personal.</li>
-                                <li>Dotación de ropa en buen estado.</li>
-                                <li>Acceso a servicios básicos: ducha, cocina y lavandería.</li>
-                            </ul>
-                        </div>
+                    <h4>Servicios:</h4>
 
-                        <img src="area-socio3.png" alt="Apoyo humanitario en situaciones de vulnerabilidad">
-                    </div>
-                </section>
-            `
-        },
+                    <ul>
+                        <li>
+                            Entrega de kits de aseo personal.
+                        </li>
+
+                        <li>
+                            Dotación de ropa en buen estado.
+                        </li>
+
+                        <li>
+                            Acceso a servicios básicos:
+                            ducha, cocina y lavandería.
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="area-detail-image">
+                    <img src="area-socio3.png" alt="Apoyo humanitario">
+                </div>
+
+            </div>
+        </section>
+    `
+},
 
         jovenes: {
-            support: "Área de formación e interculturalidad",
-            title: "Área Jóvenes e Interculturalidad",
+            support: "",
+            title: "ÁREA FORMACIÓN INTERCULTURAL",
             body: `
                 <div class="area-popup-section">
                     <h2>Objetivo del Área</h2>
@@ -567,7 +621,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
 
                         <div class="popup-image-column">
-                            <img src="interculturalidad4.png" alt="Acciones Socioeducativas con la Niñez">
                             <img src="interculturalidad5.png" alt="Acciones Socioeducativas con la Niñez">
                         </div>
                     </div>
