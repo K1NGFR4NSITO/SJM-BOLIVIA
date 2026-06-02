@@ -3436,18 +3436,28 @@ body.modal-open{
 .video-title{
     position:absolute;
 
-    left:30px;
-
     top:50%;
-    transform:translateY(-50%);
+    left:50%;
+
+    transform:translate(-50%, -50%);
 
     color:white;
-    font-size:38px;
-    font-weight:800;
-    letter-spacing:1px;
-    text-shadow:0 4px 20px rgba(0,0,0,.5);
+
+    font-size:58px;
+    font-weight:900;
+    text-transform:uppercase;
+
+    text-align:center;
+
+    width:90%;
 
     margin:0;
+
+    text-shadow:
+        0 4px 20px rgba(0,0,0,.8),
+        0 0 10px rgba(0,0,0,.8);
+
+    z-index:10;
 }
 
 .video-btn{
