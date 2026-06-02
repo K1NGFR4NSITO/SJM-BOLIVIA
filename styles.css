@@ -3383,8 +3383,10 @@ body.modal-open{
     position:absolute;
     top:50%;
     left:50%;
-    width:360%;
-    height:100%;
+
+    width:300%;
+    height:200%;
+
     transform:translate(-50%, -50%);
     border:0;
 }
@@ -3398,6 +3400,11 @@ body.modal-open{
     .youtube-crop-box{
         min-height:420px;
     }
+
+    .youtube-crop-video{
+        width:250%;
+        height:180%;
+    }
 }
 
 @media(max-width:480px){
@@ -3408,5 +3415,10 @@ body.modal-open{
 
     .youtube-crop-box{
         min-height:320px;
+    }
+
+    .youtube-crop-video{
+        width:220%;
+        height:160%;
     }
 }
