@@ -785,6 +785,179 @@ section{
     border-radius:999px;
 }
 
+
+/* =========================================================
+   NUESTRAS ALIANZAS
+   ========================================================= */
+
+.alliances-section{
+    width:100%;
+    background:#ffffff;
+    padding:58px 60px 46px;
+    text-align:center;
+    overflow:hidden;
+}
+
+.alliances-section h2{
+    color:#0b8fa3;
+    font-size:44px;
+    line-height:1.1;
+    font-weight:900;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin:0 0 54px;
+}
+
+.alliances-carousel{
+    width:min(1280px, 100%);
+    margin:0 auto;
+    overflow:hidden;
+}
+
+.alliances-track{
+    position:relative;
+    width:100%;
+    min-height:145px;
+}
+
+.alliances-slide{
+    position:absolute;
+    inset:0;
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    align-items:center;
+    justify-items:center;
+    gap:60px;
+    opacity:0;
+    visibility:hidden;
+    transform:translateX(24px);
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease,
+        visibility 0.45s ease;
+}
+
+.alliances-slide.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(0);
+}
+
+.alliances-slide img{
+    display:block;
+    width:auto;
+    max-width:210px;
+    max-height:90px;
+    object-fit:contain;
+    filter:none;
+}
+
+.alliances-dots{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-top:28px;
+}
+
+.alliance-dot{
+    width:13px;
+    height:13px;
+    border:none;
+    border-radius:50%;
+    background:#c9e8ee;
+    cursor:pointer;
+    padding:0;
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.alliance-dot.active{
+    background:#0b8fa3;
+    transform:scale(1.08);
+}
+
+@media(max-width:1100px){
+    .alliances-section{
+        padding:50px 30px 42px;
+    }
+
+    .alliances-section h2{
+        font-size:38px;
+        margin-bottom:42px;
+    }
+
+    .alliances-slide{
+        gap:36px;
+    }
+
+    .alliances-slide img{
+        max-width:170px;
+        max-height:78px;
+    }
+}
+
+@media(max-width:768px){
+    .alliances-section{
+        padding:44px 20px 38px;
+    }
+
+    .alliances-section h2{
+        font-size:30px;
+        margin-bottom:34px;
+    }
+
+    .alliances-track{
+        min-height:230px;
+    }
+
+    .alliances-slide{
+        grid-template-columns:repeat(2, 1fr);
+        gap:34px 28px;
+    }
+
+    .alliances-slide img{
+        max-width:145px;
+        max-height:68px;
+    }
+
+    .alliances-dots{
+        margin-top:24px;
+    }
+}
+
+@media(max-width:480px){
+    .alliances-section{
+        padding:38px 14px 34px;
+    }
+
+    .alliances-section h2{
+        font-size:25px;
+        letter-spacing:1px;
+        margin-bottom:28px;
+    }
+
+    .alliances-track{
+        min-height:215px;
+    }
+
+    .alliances-slide{
+        gap:28px 18px;
+    }
+
+    .alliances-slide img{
+        max-width:125px;
+        max-height:60px;
+    }
+
+    .alliance-dot{
+        width:11px;
+        height:11px;
+    }
+}
+
 /* NUEVA SECCION CONTACTO */
 
 .contact-showcase{
@@ -2860,3 +3033,329 @@ body.modal-open{
 
 /* ALINEAR TEXTO A LA IZQUIERDA EN POPUPS */
 
+
+
+
+/* =========================================================
+   CORRECCIÓN FINAL RESPONSIVE POPUPS / MODALES
+   - Evita que la barra de scroll se salga del recuadro.
+   - Corrige distribución texto + imagen en celular.
+   - Evita títulos cortados y contenido apretado.
+   ========================================================= */
+
+.project-modal{
+    padding:24px;
+    overflow:hidden;
+}
+
+.project-modal-box{
+    width:min(950px, calc(100vw - 48px)) !important;
+    max-height:calc(100dvh - 48px) !important;
+    overflow:hidden !important;
+    display:flex !important;
+    flex-direction:column !important;
+    border-radius:28px !important;
+    padding:38px 42px 34px !important;
+}
+
+.project-modal-support,
+.project-modal-box > h2{
+    flex:0 0 auto;
+    padding-right:58px;
+}
+
+.project-modal-box > h2{
+    margin-bottom:18px !important;
+}
+
+.project-modal-body{
+    flex:1 1 auto;
+    min-height:0;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding-right:14px;
+    scrollbar-width:thin;
+    scrollbar-color:#b8b8b8 transparent;
+}
+
+.project-modal-body::-webkit-scrollbar{
+    width:7px;
+}
+
+.project-modal-body::-webkit-scrollbar-track{
+    background:transparent;
+    margin:10px 0;
+}
+
+.project-modal-body::-webkit-scrollbar-thumb{
+    background:#bdbdbd;
+    border-radius:999px;
+}
+
+.project-modal-close{
+    z-index:5;
+}
+
+.popup-grid,
+.popup-grid-image-right,
+.area-detail-grid,
+.area-detail-grid.reverse{
+    max-width:100%;
+}
+
+.popup-text,
+.area-detail-content{
+    min-width:0;
+}
+
+.popup-image img,
+.area-detail-image img,
+.area-detail-grid img,
+.area-detail-grid.reverse img{
+    max-width:100% !important;
+}
+
+/* TABLET */
+@media(max-width:900px){
+    .project-modal{
+        padding:18px;
+        align-items:center;
+    }
+
+    .project-modal-box{
+        width:calc(100vw - 36px) !important;
+        max-height:calc(100dvh - 36px) !important;
+        padding:34px 30px 28px !important;
+        border-radius:24px !important;
+    }
+
+    .project-modal-box > h2{
+        font-size:34px !important;
+        line-height:1.12 !important;
+    }
+
+    .popup-grid,
+    .popup-grid-image-right{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:22px !important;
+        margin-top:18px !important;
+    }
+
+    .popup-image{
+        width:100% !important;
+        max-width:100% !important;
+    }
+
+    .popup-image img{
+        width:100% !important;
+        max-height:320px !important;
+        object-fit:cover !important;
+    }
+}
+
+/* MÓVIL */
+@media(max-width:768px){
+    .project-modal{
+        padding:14px !important;
+        align-items:center !important;
+        justify-content:center !important;
+    }
+
+    .project-modal-box{
+        width:calc(100vw - 28px) !important;
+        max-height:calc(100dvh - 28px) !important;
+        border-radius:22px !important;
+        padding:26px 18px 20px !important;
+        box-shadow:0 18px 45px rgba(0,0,0,0.30) !important;
+    }
+
+    .project-modal-close{
+        top:14px !important;
+        right:14px !important;
+        width:42px !important;
+        height:42px !important;
+        font-size:30px !important;
+        line-height:42px !important;
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+    }
+
+    .project-modal-support{
+        font-size:12px !important;
+        line-height:1.25 !important;
+        margin-bottom:10px !important;
+        padding-right:48px !important;
+    }
+
+    .project-modal-box > h2{
+        font-size:28px !important;
+        line-height:1.08 !important;
+        margin-bottom:14px !important;
+        padding-right:48px !important;
+        word-break:normal !important;
+        overflow-wrap:break-word !important;
+    }
+
+    .project-modal-body{
+        padding-right:8px !important;
+    }
+
+    .project-modal-body p,
+    .popup-text p,
+    .area-detail-section p,
+    .area-detail-section li,
+    .level-item p,
+    .profile-card p,
+    .mobility-table p{
+        font-size:15px !important;
+        line-height:1.55 !important;
+    }
+
+    .area-popup-section,
+    .area-detail-section,
+    .stats-popup-section{
+        margin-top:20px !important;
+        padding-top:18px !important;
+    }
+
+    .area-popup-section:first-child,
+    .area-detail-section:first-child{
+        margin-top:0 !important;
+        padding-top:0 !important;
+    }
+
+    .area-popup-section h2,
+    .area-detail-section h3,
+    .stats-popup-section h3{
+        font-size:22px !important;
+        line-height:1.18 !important;
+        margin-bottom:14px !important;
+    }
+
+    .action-title{
+        font-size:22px !important;
+        line-height:1.18 !important;
+        margin-bottom:14px !important;
+    }
+
+    .popup-grid,
+    .popup-grid-image-right,
+    .popup-grid-image-double,
+    .area-detail-grid,
+    .area-detail-grid.reverse,
+    .stats-popup-hero,
+    .stats-cover-grid,
+    .mobility-box,
+    .stats-profile-grid{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:18px !important;
+        margin-top:16px !important;
+    }
+
+    .popup-text,
+    .popup-image,
+    .area-detail-content,
+    .area-detail-image,
+    .area-detail-grid > div,
+    .area-detail-grid.reverse > div{
+        width:100% !important;
+        max-width:100% !important;
+        flex:unset !important;
+        margin-right:0 !important;
+    }
+
+    .popup-image img,
+    .area-detail-image img,
+    .area-detail-grid img,
+    .area-detail-grid.reverse img,
+    .stats-image-placeholder img,
+    .mobility-image img{
+        width:100% !important;
+        height:auto !important;
+        max-height:260px !important;
+        object-fit:cover !important;
+        border-radius:14px !important;
+    }
+
+    .levels-box{
+        gap:12px !important;
+    }
+
+    .level-item{
+        padding:15px 16px !important;
+        border-radius:12px !important;
+    }
+
+    .level-item h3{
+        font-size:19px !important;
+    }
+
+    .popup-divider{
+        margin:26px 0 !important;
+    }
+
+    .stats-popup-hero{
+        padding:22px !important;
+        border-radius:18px !important;
+        margin-bottom:22px !important;
+    }
+
+    .stats-popup-hero h3{
+        font-size:26px !important;
+    }
+
+    .stats-popup-kpis{
+        grid-template-columns:1fr 1fr !important;
+        gap:10px !important;
+    }
+
+    .stats-popup-kpis div{
+        padding:14px !important;
+    }
+
+    .stats-popup-kpis strong{
+        font-size:30px !important;
+    }
+
+    .stats-table-box{
+        width:100%;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .stats-table-box table{
+        min-width:560px;
+    }
+}
+
+/* CELULARES MUY PEQUEÑOS */
+@media(max-width:420px){
+    .project-modal{
+        padding:10px !important;
+    }
+
+    .project-modal-box{
+        width:calc(100vw - 20px) !important;
+        max-height:calc(100dvh - 20px) !important;
+        padding:24px 15px 18px !important;
+        border-radius:20px !important;
+    }
+
+    .project-modal-box > h2{
+        font-size:25px !important;
+    }
+
+    .project-modal-body{
+        padding-right:6px !important;
+    }
+
+    .popup-image img,
+    .area-detail-image img,
+    .area-detail-grid img,
+    .area-detail-grid.reverse img{
+        max-height:230px !important;
+    }
+}

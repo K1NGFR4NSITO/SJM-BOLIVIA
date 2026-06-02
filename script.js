@@ -323,6 +323,9 @@ document.addEventListener("DOMContentLoaded", () => {
             projectModalTitle.textContent = project.title;
             projectModalBody.innerHTML = project.body;
 
+            const modalScroll = projectModal.querySelector(".project-modal-scroll");
+            if (modalScroll) modalScroll.scrollTop = 0;
+
             projectModal.classList.add("active");
             projectModal.setAttribute("aria-hidden", "false");
 
@@ -373,131 +376,88 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const areasData = {
         sociopastoral: {
-    title: "Área Socio Pastoral",
-    body: `
-        <section class="area-detail-section">
-            <h3>Objetivo del Área</h3>
-
-            <p>
-                Disminuir la vulnerabilidad de las personas migrantes y sus familias mediante la articulación con otras instituciones para el acompañamiento en los flujos migratorios, el fortalecimiento de una presencia intercultural orientada a la formación e información en zonas fronterizas, y el desarrollo de acciones de acompañamiento social y pastoral dirigidas a familias en situación de vulnerabilidad.
-            </p>
-        </section>
-
-        <section class="area-detail-section">
-            <h3>1. Acompañamiento social para el bienestar y la inclusión</h3>
-
-            <div class="area-detail-grid">
-
-                <div class="area-detail-content">
-
+            title: "Área Socio Pastoral",
+            body: `
+                <section class="area-detail-section">
+                    <h3>Objetivo del Área</h3>
                     <p>
-                        Brindamos acompañamiento integral a la población migrante, promoviendo su bienestar y facilitando su proceso de integración social.
+                        Disminuir la vulnerabilidad de las personas migrantes y sus familias mediante la articulación con otras instituciones para el acompañamiento en los flujos migratorios, el fortalecimiento de una presencia intercultural orientada a la formación e información en zonas fronterizas, y el desarrollo de acciones de acompañamiento social y pastoral dirigidas a familias en situación de vulnerabilidad.
                     </p>
+                </section>
 
-                    <h4>Servicios:</h4>
+                <section class="area-detail-section">
+                    <h3>1. Acompañamiento social para el bienestar y la inclusión</h3>
 
-                    <ul>
-                        <li>
-                            Acompañamiento y seguimiento en situaciones de salud,
-                            mediante la articulación con centros de atención aliados.
-                        </li>
+                    <div class="area-detail-grid">
+                        <div class="area-detail-content">
+                            <p>
+                                Brindamos acompañamiento integral a la población migrante, promoviendo su bienestar y facilitando su proceso de integración social.
+                            </p>
 
-                        <li>
-                            Orientación social para la movilidad y adaptación
-                            en las ciudades de El Alto y La Paz.
-                        </li>
+                            <h4>Servicios:</h4>
 
-                        <li>
-                            Promoción de la integración social,
-                            económica y cultural.
-                        </li>
-                    </ul>
+                            <ul>
+                                <li>Acompañamiento y seguimiento en situaciones de salud, mediante la articulación con centros de atención aliados.</li>
+                                <li>Orientación social para la movilidad y adaptación en las ciudades de El Alto y La Paz.</li>
+                                <li>Promoción de la integración social, económica y cultural.</li>
+                            </ul>
+                        </div>
 
-                </div>
+                        <div class="area-detail-image">
+                            <img src="area-socio1.png" alt="Acompañamiento social">
+                        </div>
+                    </div>
+                </section>
 
-                <div class="area-detail-image">
-                    <img src="area-socio1.png" alt="Acompañamiento social">
-                </div>
+                <section class="area-detail-section">
+                    <h3>2. Orientación legal y migratoria para el acceso a derechos</h3>
 
-            </div>
-        </section>
+                    <div class="area-detail-grid">
+                        <div class="area-detail-content">
+                            <p>
+                                Ofrecemos orientación y acompañamiento en temas legales y migratorios, promoviendo el acceso efectivo a derechos y la regularización de la situación migratoria.
+                            </p>
 
-        <section class="area-detail-section">
-            <h3>2. Orientación legal y migratoria para el acceso a derechos</h3>
+                            <h4>Servicios:</h4>
 
-            <div class="area-detail-grid">
+                            <ul>
+                                <li>Orientación sobre la normativa migratoria vigente.</li>
+                                <li>Asesoramiento legal básico según cada caso.</li>
+                                <li>Acompañamiento en procesos administrativos migratorios.</li>
+                            </ul>
+                        </div>
 
-                <div class="area-detail-content">
+                        <div class="area-detail-image">
+                            <img src="area-socio2.png" alt="Orientación legal y migratoria">
+                        </div>
+                    </div>
+                </section>
 
-                    <p>
-                        Ofrecemos orientación y acompañamiento en temas legales y migratorios,
-                        promoviendo el acceso efectivo a derechos y la regularización de la situación migratoria.
-                    </p>
+                <section class="area-detail-section">
+                    <h3>3. Apoyo humanitario en situaciones de vulnerabilidad</h3>
 
-                    <h4>Servicios:</h4>
+                    <div class="area-detail-grid">
+                        <div class="area-detail-content">
+                            <p>
+                                Brindamos asistencia oportuna y digna a personas migrantes en condiciones de vulnerabilidad, garantizando el acceso a servicios básicos.
+                            </p>
 
-                    <ul>
-                        <li>
-                            Orientación sobre la normativa migratoria vigente.
-                        </li>
+                            <h4>Servicios:</h4>
 
-                        <li>
-                            Asesoramiento legal básico según cada caso.
-                        </li>
+                            <ul>
+                                <li>Entrega de kits de aseo personal.</li>
+                                <li>Dotación de ropa en buen estado.</li>
+                                <li>Acceso a servicios básicos: ducha, cocina y lavandería.</li>
+                            </ul>
+                        </div>
 
-                        <li>
-                            Acompañamiento en procesos administrativos migratorios.
-                        </li>
-                    </ul>
-
-                </div>
-
-                <div class="area-detail-image">
-                    <img src="area-socio2.png" alt="Orientación legal y migratoria">
-                </div>
-
-            </div>
-        </section>
-
-        <section class="area-detail-section">
-            <h3>3. Apoyo humanitario en situaciones de vulnerabilidad</h3>
-
-            <div class="area-detail-grid">
-
-                <div class="area-detail-content">
-
-                    <p>
-                        Brindamos asistencia oportuna y digna a personas migrantes
-                        en condiciones de vulnerabilidad, garantizando el acceso a servicios básicos.
-                    </p>
-
-                    <h4>Servicios:</h4>
-
-                    <ul>
-                        <li>
-                            Entrega de kits de aseo personal.
-                        </li>
-
-                        <li>
-                            Dotación de ropa en buen estado.
-                        </li>
-
-                        <li>
-                            Acceso a servicios básicos:
-                            ducha, cocina y lavandería.
-                        </li>
-                    </ul>
-
-                </div>
-
-                <div class="area-detail-image">
-                    <img src="area-socio3.png" alt="Apoyo humanitario">
-                </div>
-
-            </div>
-        </section>
-    `
-},
+                        <div class="area-detail-image">
+                            <img src="area-socio3.png" alt="Apoyo humanitario">
+                        </div>
+                    </div>
+                </section>
+            `
+        },
 
         jovenes: {
             support: "",
@@ -536,27 +496,21 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="level-item">
                             <h3>Nivel I</h3>
                             <p>
-                                Desarrollar en los jóvenes habilidades intrapersonales que les permita alcanzar un
-                                conocimiento de sí mismos y de su entorno a través de actividades centradas en el
-                                reconocimiento de su identidad cultural para lograr una afirmación de su propia cultura.
+                                Desarrollar en los jóvenes habilidades intrapersonales que les permita alcanzar un conocimiento de sí mismos y de su entorno a través de actividades centradas en el reconocimiento de su identidad cultural para lograr una afirmación de su propia cultura.
                             </p>
                         </div>
 
                         <div class="level-item">
                             <h3>Nivel II</h3>
                             <p>
-                                Fomentar actitudes constructivas desde el reconocimiento de su propia cultura y de
-                                apertura al otro en un contexto de diversidad cultural, a través de actividades centradas
-                                en procesos de diálogo y comunicación para posibilitar una interacción cultural en diversidad.
+                                Fomentar actitudes constructivas desde el reconocimiento de su propia cultura y de apertura al otro en un contexto de diversidad cultural, a través de actividades centradas en procesos de diálogo y comunicación para posibilitar una interacción cultural en diversidad.
                             </p>
                         </div>
 
                         <div class="level-item">
                             <h3>Nivel III</h3>
                             <p>
-                                Promover procesos que posibiliten diálogos multiculturales desde una conciencia
-                                intercultural, a través de la incidencia en distintos grupos sociales para propiciar
-                                espacios de convivencia intercultural e interacción fraternal.
+                                Promover procesos que posibiliten diálogos multiculturales desde una conciencia intercultural, a través de la incidencia en distintos grupos sociales para propiciar espacios de convivencia intercultural e interacción fraternal.
                             </p>
                         </div>
                     </div>
@@ -572,10 +526,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="popup-grid popup-grid-image-right">
                         <div class="popup-text">
                             <p>
-                                Se realizan procesos formativos orientados al desarrollo de habilidades y actitudes
-                                interculturales en jóvenes, mediante la aplicación de la metodología multitransformadora,
-                                con el fin de fortalecer la convivencia y la interrelación cultural en la ciudad de El Alto,
-                                en un contexto de movilidad migratoria interna y externa que enriquece la diversidad cultural.
+                                Se realizan procesos formativos orientados al desarrollo de habilidades y actitudes interculturales en jóvenes, mediante la aplicación de la metodología multitransformadora, con el fin de fortalecer la convivencia y la interrelación cultural en la ciudad de El Alto, en un contexto de movilidad migratoria interna y externa que enriquece la diversidad cultural.
                             </p>
                         </div>
 
@@ -593,10 +544,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="popup-grid popup-grid-image-right">
                         <div class="popup-text">
                             <p>
-                                Se desarrollan espacios de encuentro entre personas migrantes internacionales y jóvenes
-                                del programa Jóvenes Rompiendo Fronteras, orientados a fortalecer valores de hospitalidad
-                                y a promover la superación de barreras socioculturales, favoreciendo la convivencia y el
-                                reconocimiento mutuo.
+                                Se desarrollan espacios de encuentro entre personas migrantes internacionales y jóvenes del programa Jóvenes Rompiendo Fronteras, orientados a fortalecer valores de hospitalidad y a promover la superación de barreras socioculturales, favoreciendo la convivencia y el reconocimiento mutuo.
                             </p>
                         </div>
 
@@ -614,9 +562,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="popup-grid popup-grid-image-double">
                         <div class="popup-text">
                             <p>
-                                Se implementan actividades lúdico-formativas orientadas a promover la interculturalidad
-                                mediante dinámicas y juegos que facilitan el reconocimiento, la valoración de la diversidad
-                                cultural y la interacción respetuosa entre niños y niñas.
+                                Se implementan actividades lúdico-formativas orientadas a promover la interculturalidad mediante dinámicas y juegos que facilitan el reconocimiento, la valoración de la diversidad cultural y la interacción respetuosa entre niños y niñas.
                             </p>
                         </div>
 
@@ -803,10 +749,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function openSharedModal(data) {
         if (!data) return;
 
-        modalSupport.textContent = data.support;
-        modalTitle.textContent = data.title;
-        modalBody.innerHTML = data.body;
+        modalSupport.textContent = data.support || "";
+        modalTitle.textContent = data.title || "";
+        modalBody.innerHTML = data.body || "";
 
+        modalBody.scrollTop = 0;
         modal.classList.add("active");
 
         lockPageScroll();
@@ -845,4 +792,51 @@ document.addEventListener("DOMContentLoaded", () => {
             closeSharedModal();
         }
     });
+});
+
+/* ========= CARRUSEL NUESTRAS ALIANZAS ========= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const allianceSlides = document.querySelectorAll(".alliances-slide");
+    const allianceDots = document.querySelectorAll(".alliance-dot");
+
+    if (!allianceSlides.length || !allianceDots.length) return;
+
+    let allianceIndex = 0;
+    let allianceAutoPlay;
+
+    function showAllianceSlide(newIndex) {
+        allianceSlides.forEach(slide => slide.classList.remove("active"));
+        allianceDots.forEach(dot => dot.classList.remove("active"));
+
+        if (allianceSlides[newIndex]) allianceSlides[newIndex].classList.add("active");
+        if (allianceDots[newIndex]) allianceDots[newIndex].classList.add("active");
+    }
+
+    function nextAllianceSlide() {
+        allianceIndex++;
+
+        if (allianceIndex >= allianceSlides.length) {
+            allianceIndex = 0;
+        }
+
+        showAllianceSlide(allianceIndex);
+    }
+
+    function restartAllianceAutoplay() {
+        clearInterval(allianceAutoPlay);
+        allianceAutoPlay = setInterval(nextAllianceSlide, 5000);
+    }
+
+    allianceDots.forEach((dot, dotIndex) => {
+        dot.addEventListener("click", () => {
+            allianceIndex = dotIndex;
+            showAllianceSlide(allianceIndex);
+            restartAllianceAutoplay();
+        });
+    });
+
+    showAllianceSlide(0);
+    restartAllianceAutoplay();
 });
