@@ -3422,3 +3422,55 @@ body.modal-open{
         height:160%;
     }
 }
+
+.video-card{
+    position:relative;
+}
+
+.video-overlay{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.video-title{
+    position:absolute;
+
+    left:30px;
+
+    top:50%;
+    transform:translateY(-50%);
+
+    color:white;
+    font-size:38px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-shadow:0 4px 20px rgba(0,0,0,.5);
+
+    margin:0;
+}
+
+.video-btn{
+    position:absolute;
+
+    right:25px;
+    bottom:25px;
+
+    background:rgba(255,255,255,.95);
+    color:#0c5a87;
+
+    padding:12px 22px;
+    border-radius:999px;
+
+    font-weight:700;
+    text-decoration:none;
+
+    pointer-events:auto;
+
+    transition:.25s;
+}
+
+.video-btn:hover{
+    transform:translateY(-2px);
+    background:white;
+}
