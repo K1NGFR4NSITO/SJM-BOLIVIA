@@ -800,6 +800,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const allianceSlides = document.querySelectorAll(".alliances-slide");
     const allianceDots = document.querySelectorAll(".alliance-dot");
+    const allianceTitle = document.getElementById("alliancesTitle");
 
     if (!allianceSlides.length || !allianceDots.length) return;
 
@@ -812,6 +813,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (allianceSlides[newIndex]) allianceSlides[newIndex].classList.add("active");
         if (allianceDots[newIndex]) allianceDots[newIndex].classList.add("active");
+
+        if (allianceTitle && allianceSlides[newIndex]) {
+            const newTitle = allianceSlides[newIndex].dataset.title;
+
+            allianceTitle.style.opacity = "0";
+
+            setTimeout(() => {
+                allianceTitle.textContent = newTitle;
+                allianceTitle.style.opacity = "1";
+            }, 180);
+        }
     }
 
     function nextAllianceSlide() {

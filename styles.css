@@ -824,14 +824,16 @@ section{
     position:absolute;
     inset:0;
     width:100%;
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
+
+    display:flex;
     align-items:center;
-    justify-items:center;
+    justify-content:center;
     gap:60px;
+
     opacity:0;
     visibility:hidden;
     transform:translateX(24px);
+
     transition:
         opacity 0.45s ease,
         transform 0.45s ease,
@@ -847,8 +849,8 @@ section{
 .alliances-slide img{
     display:block;
     width:auto;
-    max-width:210px;
-    max-height:90px;
+    max-width:300px;
+    max-height:130px;
     object-fit:contain;
     filter:none;
 }
@@ -894,8 +896,8 @@ section{
     }
 
     .alliances-slide img{
-        max-width:170px;
-        max-height:78px;
+        max-width:240px;
+        max-height:110px;
     }
 }
 
@@ -910,7 +912,7 @@ section{
     }
 
     .alliances-track{
-        min-height:230px;
+        min-height:260px;
     }
 
     .alliances-slide{
@@ -919,8 +921,8 @@ section{
     }
 
     .alliances-slide img{
-        max-width:145px;
-        max-height:68px;
+        max-width:180px;
+        max-height:90px;
     }
 
     .alliances-dots{
@@ -940,7 +942,7 @@ section{
     }
 
     .alliances-track{
-        min-height:215px;
+        min-height:230px;
     }
 
     .alliances-slide{
@@ -948,8 +950,8 @@ section{
     }
 
     .alliances-slide img{
-        max-width:125px;
-        max-height:60px;
+        max-width:145px;
+        max-height:75px;
     }
 
     .alliance-dot{
@@ -3483,4 +3485,306 @@ body.modal-open{
 .video-btn:hover{
     transform:translateY(-2px);
     background:white;
+}
+
+/* TITULOS SUPERIORES DE LOS 3 RECUADROS */
+
+.info-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.info-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:135px;
+
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.22) 0%,
+        rgba(0,0,0,0.12) 45%,
+        rgba(0,0,0,0.04) 78%,
+        rgba(0,0,0,0) 100%
+    );
+
+    z-index:4;
+    pointer-events:none;
+}
+
+.card-top-title{
+    position:absolute !important;
+    top:55px !important;
+    left:50% !important;
+    right:auto !important;
+    transform:translateX(-50%) !important;
+
+    width:90% !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    z-index:8 !important;
+
+    color:#ffffff !important;
+
+    font-size:28px !important;
+    line-height:1.15 !important;
+    font-weight:900 !important;
+
+    text-align:center !important;
+    text-transform:none !important;
+    letter-spacing:0.4px !important;
+
+    text-shadow:
+        0 2px 6px rgba(0,0,0,0.45);
+}
+
+/* Ajuste para que el contenido no choque con el título */
+
+.card-blue .stats-cover{
+    margin-top:105px !important;
+}
+
+.card-red h2{
+    margin-top:105px !important;
+}
+
+/* VIDEO */
+
+.video-card{
+    position:relative;
+}
+
+.video-overlay{
+    position:absolute;
+    inset:0;
+    z-index:7;
+    pointer-events:none;
+}
+
+.video-title{
+    top:55px !important;
+}
+
+.video-btn{
+    position:absolute;
+    right:25px;
+    bottom:25px;
+
+    z-index:9;
+
+    background:rgba(255,255,255,.95);
+    color:#0c5a87;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    font-weight:800;
+    text-decoration:none;
+
+    pointer-events:auto;
+
+    transition:.25s;
+}
+
+.video-btn:hover{
+    transform:translateY(-2px);
+    background:#ffffff;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .card-top-title{
+        font-size:24px !important;
+        top:45px !important;
+    }
+
+    .card-blue .stats-cover{
+        margin-top:85px !important;
+    }
+
+    .card-red h2{
+        margin-top:85px !important;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .card-top-title{
+        font-size:20px !important;
+        top:39px !important;
+    }
+
+    .card-blue .stats-cover{
+        margin-top:70px !important;
+    }
+
+    .card-red h2{
+        margin-top:70px !important;
+    }
+
+}
+
+/* AJUSTE FINAL: TARJETAS DE ÁREAS */
+
+.info-top-card{
+    min-height:380px;
+}
+
+.info-top-card img{
+    filter:brightness(0.82) !important;
+}
+
+.info-top-overlay{
+    background:linear-gradient(
+        90deg,
+        rgba(0,0,0,0.46) 0%,
+        rgba(0,0,0,0.25) 45%,
+        rgba(0,0,0,0.10) 100%
+    ) !important;
+}
+
+.info-top-content{
+    padding:44px 46px !important;
+}
+
+.info-top-content h3{
+    font-size:42px !important;
+    line-height:1.05 !important;
+    font-weight:900 !important;
+    letter-spacing:1px !important;
+    max-width:95% !important;
+    text-shadow:0 4px 14px rgba(0,0,0,0.55) !important;
+}
+
+.info-top-content span{
+    font-size:18px !important;
+    padding:12px 24px !important;
+}
+
+/* TABLET */
+@media(max-width:1100px){
+    .info-top-card{
+        min-height:320px;
+    }
+
+    .info-top-content{
+        padding:34px !important;
+    }
+
+    .info-top-content h3{
+        font-size:34px !important;
+    }
+}
+
+/* MÓVIL */
+@media(max-width:768px){
+    .info-top-card{
+        min-height:260px;
+    }
+
+    .info-top-content{
+        padding:26px !important;
+    }
+
+    .info-top-content h3{
+        font-size:26px !important;
+        line-height:1.1 !important;
+    }
+
+    .info-top-content span{
+        font-size:15px !important;
+        padding:9px 18px !important;
+    }
+}
+
+/* MÓVIL PEQUEÑO */
+@media(max-width:480px){
+    .info-top-card{
+        min-height:220px;
+    }
+
+    .info-top-content{
+        padding:20px !important;
+    }
+
+    .info-top-content h3{
+        font-size:21px !important;
+        line-height:1.12 !important;
+    }
+}
+
+/* SUBTITULO ROTATIVO */
+
+.alliances-subtitle{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    font-size:2rem;
+    font-weight:800;
+    color:#138ca3;
+
+    margin:25px auto 50px auto;
+
+    opacity:1;
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+
+    min-height:48px;
+}
+
+/* Animación */
+
+#alliancesTitle{
+    width:100%;
+    text-align:center;
+    display:block;
+}
+
+/* Responsive */
+
+@media (max-width:768px){
+
+    .alliances-subtitle{
+        font-size:1.6rem;
+        margin:20px auto 40px auto;
+    }
+}
+
+@media (max-width:480px){
+
+    .alliances-subtitle{
+        font-size:1.3rem;
+        margin:15px auto 30px auto;
+    }
+}
+
+/* LOGOS CLICKEABLES */
+
+.alliances-slide a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:transform .25s ease;
+}
+
+.alliances-slide a:hover{
+    transform:scale(1.08);
+}
+
+.alliances-slide img{
+    cursor:pointer;
 }
